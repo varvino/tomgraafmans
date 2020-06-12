@@ -1,0 +1,36 @@
+{% block head %}
+	{% include 'layout/head.twig' %}
+{% endblock %}
+
+<body class="{{body_class}}" data-template="base.twig">
+
+	{% block header %}
+
+		{% if is_front_page %}
+			<header class="frontpage-header">
+				{% include 'layout/header.twig' %}
+			</header>
+		{% else %}
+			<header>
+				{% include 'layout/header.twig' %}
+			</header>
+		{% endif %}
+
+	{% endblock %}
+
+	<main>
+		{% if content is empty %}
+			{% block content %}
+				Sorry, no content
+			{% endblock %}
+		{% endif %}
+	</main>
+
+	{% block footer %}
+		<footer>
+			{% include 'layout/footer.twig' %}
+		</footer>
+		{{ function('wp_footer') }}
+	{% endblock %}
+
+</body></html>

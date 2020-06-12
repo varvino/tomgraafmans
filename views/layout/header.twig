@@ -1,0 +1,17 @@
+{% if is_front_page %}
+	<div class="container">
+		<a href="{{site.link}}" class="logo">
+			<img src="{{site.theme.link}}/assets/img/logo.svg" alt="WordPress-developer Portfolio Tom Graafmans" class="logo__image">
+		</a>
+		<div>
+			<h2 class="header__subtitle">Hallo, ik ben Tom</h2>
+			<h1 class="header__title">Een junior WordPress developer</h1>
+		</div>
+	</div>
+{% else %}
+	<div class="container">
+		<a href="{{site.link}}" class="logo">
+			<img src="{{site.theme.link}}/assets/img/logo.svg" alt="WordPress-developer Portfolio Tom Graafmans" class="logo__image">
+		</a>
+	</div>
+{% endif %}
