@@ -1,0 +1,31 @@
+.frontpage-header {
+    .header__subtitle {
+        font-weight: 400;
+        font-size  : 2.25rem;
+        color      : $color--primary;
+    }
+
+    .header__title {
+        font-size: 3rem;
+    }
+}
+
+.introduction-container {
+    padding         : 1.875rem 0;
+    background-color: transparentize($color: $color--primary, $amount: 0.95);
+}
+
+.recent-projects-container {
+    padding: 1.875rem 0;
+}
+
+.recent-projects {
+    display              : grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap             : 1.875rem;
+}
+
+.recent-project__image {
+    min-height: 200px;
+    object-fit: cover;
+}

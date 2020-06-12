@@ -1,0 +1,62 @@
+/* ##############################################
+    Theme Colors
+################################################*/
+// Main Colors
+$color--primary : #572052;
+
+// Filtered Colors
+$color__filtered--black : invert(0%) sepia(0%) saturate(1128%) hue-rotate(145deg) brightness(78%) contrast(104%);
+$color__filtered--white : invert(100%) sepia(39%) saturate(42%) hue-rotate(232deg) brightness(118%) contrast(94%);
+
+// Greys
+$color--grey         : #ccc;
+$color--grey-lighter : lighten($color--grey, 10);
+$color--grey-darker  : darken($color--grey, 10);
+
+// Background Color
+$background-color : #FFFAFE;
+
+// Font Colors
+$font-color--grey         : #999;
+$font-color--grey-lighter : lighten($font-color--grey, 10);
+$font-color--grey-darker  : darken($font-color--grey, 10);
+
+/* ##############################################
+    Theme Fonts
+################################################*/
+// Font Families
+$font-family--base : "Asap",
+sans-serif;
+$font-family--headings : "Barlow",
+sans-serif;
+
+// Font Size
+$font-size--base : 1rem;
+
+// Line Height
+$line-height--base : 1.25;
+$line-height--two  : 2;
+
+/* ##############################################
+    Theme Components
+################################################*/
+// Transitions
+$transition--base : all .2s ease-in-out;
+
+// Border Radius
+$border-radius--base: 0.25rem;
+
+// Spacing
+$spacing--base  : $font-size--base;
+$spacing--one   : $spacing--base * 1.25;
+$spacing--two   : $spacing--base * 1.5;
+$spacing--three : $spacing--base * 1.75;
+$spacing--four  : $spacing--base * 2;
+$spacing--five  : $spacing--base * 2.5;
+$spacing--six   : $spacing--base * 3;
+$spacing--seven : $spacing--base * 3.5;
+$spacing--eight : $spacing--base * 4;
+$spacing--nine  : $spacing--base * 4.5;
+
+// Box Shadow
+$box-shadow-base: 0 0 1.25rem rgba(0, 0, 0, 0.15);
