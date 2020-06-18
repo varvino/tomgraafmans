@@ -1,0 +1,5 @@
+.hamburger {
+    @include medium {
+        display: none;
+    }
+}

@@ -59,16 +59,18 @@ p:last-child{margin-bottom:0}
 .font-size--two{font-size:1.5rem}
 .introduction__text{font-weight:500;font-size:1.5rem;margin-bottom:1.875rem}
 .title--small{font-size:1.25rem}
+.text-align--center{text-align:center}
 header{padding:1.875rem 0}
 .logo{display:block;margin-bottom:3.125rem}
 .logo__image{max-width:2.75rem}
 .frontpage-header .header__subtitle{font-weight:400;font-size:2.25rem;color:#572052}
 .frontpage-header .header__title{font-size:3rem}
-.introduction-container{padding:1.875rem 0;background-color:rgba(87,32,82,0.05)}
+.overview-container{padding:1.875rem 0;background-color:rgba(87,32,82,0.05)}
 .recent-projects-container{padding:1.875rem 0}
 .recent-projects{display:grid;grid-template-columns:1fr 1fr;grid-gap:1.875rem}
-.recent-project__image{min-height:200px;-o-object-fit:cover;object-fit:cover}
+.recent-project__image{height:200px;-o-object-fit:cover;object-fit:cover}
 @media(min-width:700px){.container{width:80%}
+.hamburger{display:none}
 }@media(min-width:900px){.container{width:70%;max-width:800px}
 }@media(min-width:1200px){.container{width:60%;max-width:1000px}
 .padding--sm{padding:1.5rem}
