@@ -1,17 +1,20 @@
-<?php
+<head>
+    <?php
+    wp_head();
+    get_template_part('template-parts/header');
+    ?>
 
-/**
- * The Template for displaying all single posts
- *
- * Methods for TimberHelper can be found in the /lib sub-directory
- *
- * @package  WordPress
- * @subpackage  Timber
- * @since    Timber 0.1
- */
+    <main class="container">
+        <?php if (have_posts()):
+            while (have_posts()):
+                the_post(); ?>
+                <article class="post">
+                    <h1 class="post__title"><?php the_title(); ?></h2>
+                        <div class="post__content"><?php the_content(); ?></div>
+                </article>
+        <?php
+            endwhile;
+        endif; ?>
+    </main>
 
-$context         = Timber::context();
-$timber_post     = Timber::query_post();
-$context['post'] = $timber_post;
-
-Timber::render(array('single-' . $timber_post->ID . '.twig', 'single-' . $timber_post->post_type . '.twig', 'single-' . $timber_post->slug . '.twig', 'single.twig'), $context);
+    <?php get_template_part('template-parts/footer'); ?>

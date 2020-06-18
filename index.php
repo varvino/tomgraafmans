@@ -1,19 +1,40 @@
-<?php
-/**
- * The main template file
- * This is the most generic template file in a WordPress theme
- * and one of the two required files for a theme (the other being style.css).
- * It is used to display a page when nothing more specific matches a query.
- * E.g., it puts together the home page when no home.php file exists
- *
- * Methods for TimberHelper can be found in the /lib sub-directory
- *
- * @package  WordPress
- * @subpackage  Timber
- * @since   Timber 0.1
- */
+<head>
 
-$context          = Timber::context();
-$context['posts'] = new Timber\PostQuery();
-$templates        = array( 'index.twig');
-Timber::render( $templates, $context );
+   <?php
+   wp_head();
+   get_template_part('template-parts/header');
+   ?>
+   <main>
+      <div class="container introduction-container">
+         <h2 class="header__subtitle">Hallo, ik ben Tom</h2>
+         <h1 class="header__title">Een junior WordPress developer</h1>
+      </div>
+      <div class="overview-container">
+         <div class="container">
+            <p class="introduction__text">Ik ben op zoek naar een nieuwe uitdaging in omgeving Amsterdam.</p>
+            <div class="margin-bottom--md">
+               <h3 class="title title--small">Portfolio</h3>
+               <p>Bekijk hier een overzicht van al mijn werk.</p>
+               <a href="<?php echo site_url(); ?>" class="link">Bekijk portfolio</a>
+            </div>
+            <div class="margin-bottom--md">
+               <h3 class="title title--small">Curriculum Vitae</h3>
+               <p>Voor een uitgebreidere kijk op mijn vaardigheden verwijs ik u naar mijn CV.</p>
+               <a href="<?php echo site_url(); ?>" class="link">Bekijk CV</a>
+            </div>
+         </div>
+      </div>
+
+      <div class="container recent-projects-container">
+         <h3 class="title title--small">Recent werk</h3>
+         <div class="recent-projects">
+            <div class="recent-project">
+               <img src="<?php echo get_theme_file_uri('/assets/img/project1.jpg'); ?>" alt="Project 1" class="recent-project__image">
+            </div>
+            <div class="recent-project">
+               <img src="<?php echo get_theme_file_uri('/assets/img/project2.jpg'); ?>" alt="Project 2" class="recent-project__image">
+            </div>
+         </div>
+   </main>
+
+   <?php get_template_part('template-parts/footer'); ?>
