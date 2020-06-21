@@ -1,3 +1,13 @@
+.cta-container {
+    background-color: $color--primary;
+    color           : white;
+    padding         : 1.875rem 0;
+}
+
+.cta__text {
+    margin-bottom: 1.875rem;
+    text-align   : center;
+}
 
 .social__icons {
     display        : flex;
