@@ -5,7 +5,8 @@
             <a href="<?php echo site_url('contact') ?>" class="button button--cta">Neem contact op</a>
         </div>
     </div>
-    <div class="container">
+    <div class="social-container margin-bottom--md">
+        <div class="container">
             <div class="social__icons">
                 <a href="https://www.linkedin.com" class="social__icon">
                     <img src="<?php echo get_theme_file_uri('/assets/img/icons/linkedin.svg') ?>" alt="Deze link leidt naar mijn persoonlijke LinkedIn-pagina." class="social__icon-image">
@@ -18,6 +19,9 @@
                 </a>
             </div>
         </div>
+    </div>
+    <div class="container margin-bottom--md">
+        <div class="text-align--center text--muted">
             Copyright <?php echo date('Y'); ?> &mdash; Tom Graafmans
         </div>
     </div>
