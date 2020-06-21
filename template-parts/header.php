@@ -9,5 +9,6 @@
         </div>
     </div>
 </header>
+<div class="container"><?php custom_breadcrumbs(); ?></div>
 
 <body <?php body_class(); ?>>
