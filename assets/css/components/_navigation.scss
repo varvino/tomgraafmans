@@ -1,5 +1,63 @@
+.navbar {
+    display        : flex;
+    justify-content: space-between;
+    align-items    : center;
+}
+
+.navmenu {
+    display: none;
+
+    @include medium {
+        display: block;
+    }
+}
+
+.navigation {
+    margin : 0;
+    padding: 0;
+}
+
+.navigation-container {
+    width : 70%;
+    margin: 2rem auto 0;
+}
+
+.menu-item {
+    list-style: none;
+    padding   : 0;
+    margin    : 0;
+}
+
 .hamburger {
+    z-index : 1000;
+    position: relative;
+
     @include medium {
         display: none;
     }
+}
+
+.hamburger--white {
+    filter: invert(100%) sepia(1%) saturate(130%) hue-rotate(244deg) brightness(114%) contrast(100%);
+}
+
+.js-navmenu--toggled {
+    display         : block;
+    z-index         : 999;
+    position        : absolute;
+    left            : 0;
+    top             : 0;
+    bottom          : 0;
+    width           : 70%;
+    background-color: white;
+}
+
+.backdrop {
+    z-index         : 998;
+    position        : absolute;
+    top             : 0;
+    left            : 0;
+    right           : 0;
+    bottom          : 0;
+    background-color: transparentize($color: darken($color: $color--primary, $amount: 15), $amount: 0.75);
 }
