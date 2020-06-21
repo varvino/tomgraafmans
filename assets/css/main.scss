@@ -7,13 +7,15 @@
 @import 'abstracts/variables';
 
 // Base
+@import 'base/typography';
 @import 'base/layout';
 @import 'base/reset';
-@import 'base/typography';
 
 // Components
 @import 'components/buttons';
+@import 'components/logo';
 @import 'components/navigation';
+@import 'components/breadcrumbs';
 
 // Layout
 @import 'layout/header';
