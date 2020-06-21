@@ -5,9 +5,10 @@
    get_template_part('template-parts/header');
    ?>
    <main>
-      <div class="container introduction-container">
-         <h2 class="header__subtitle">Hallo, ik ben Tom</h2>
-         <h1 class="header__title">Een junior WordPress developer</h1>
+
+      <div class="container hero-container">
+         <h2 class="hero__subtitle">Hallo, ik ben Tom</h2>
+         <h1 class="hero__title">Een junior WordPress developer</h1>
       </div>
       <div class="overview-container">
          <div class="container">

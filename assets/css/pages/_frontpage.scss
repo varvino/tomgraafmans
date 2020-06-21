@@ -1,5 +1,13 @@
-.frontpage-header {
-    .header__subtitle {
+.hero-container {
+    padding-bottom: 1.875rem;
+}
+
+.hero__title {
+    font-size    : 3rem;
+    margin-bottom: 0;
+}
+
+.hero__subtitle {
         font-weight: 400;
         font-size  : 2.25rem;
         color      : $color--primary;
