@@ -28,8 +28,9 @@
       </div>
 
       <div class="container recent-projects-container">
-         <h3 class="title title--small">Recent werk</h3>
-         <div class="recent-projects">
+         <h3 class="title--sm">Recent werk</h3>
+         <p>Hieronder vindt u wat van mijn recente werk.</p>
+         <div class="recent-projects margin-bottom--md">
             <div class="recent-project">
                <img src="<?php echo get_theme_file_uri('/assets/img/project1.jpg'); ?>" alt="Project 1" class="recent-project__image">
             </div>
@@ -37,6 +38,7 @@
                <img src="<?php echo get_theme_file_uri('/assets/img/project2.jpg'); ?>" alt="Project 2" class="recent-project__image">
             </div>
          </div>
+         <a href="<?php echo site_url('projects'); ?>" class="button">Bekijk portfolio</a>
    </main>
 
    <?php get_template_part('template-parts/footer'); ?>
