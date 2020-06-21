@@ -10,9 +10,8 @@ function portfolio_files()
     #############################################################
     wp_enqueue_style('dashicons');
 
+    wp_enqueue_style('portfolio-fonts', 'https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&display=swap');
     wp_enqueue_style('portfolio-styles', get_theme_file_uri('/assets/css/main.min.css'), null, microtime());
-    wp_enqueue_style('portfolio-fonts', 'https://fonts.googleapis.com/css?family=Asap:400,500,700|Barlow:400,500,700&display=swap');
-
     #############################################################
     # Scripts
     #############################################################
