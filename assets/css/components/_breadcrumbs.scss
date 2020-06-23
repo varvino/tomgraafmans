@@ -4,14 +4,15 @@
     flex-wrap : wrap;
     margin    : 0;
     padding   : 0;
+    color     : transparentize($color: $color--primary, $amount: 0.6);
+
+    a {
+        color: inherit;
+    }
 }
 
 .breadcrumbs li {
     display       : inline-block;
     vertical-align: middle;
-    margin        : 0 1rem 0 0;
-}
-
-.breadcrumbs .separator {
-    color: #ccc;
+    margin        : 0 0.625rem 0 0;
 }
