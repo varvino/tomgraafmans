@@ -16,8 +16,7 @@
                             <?php the_post_thumbnail('large', ['class' => 'archive-post__image']); ?>
                         </a>
                     </li>
-                <?php
-                endwhile; ?>
+                <?php endwhile; ?>
             </ul>
         <?php endif; ?>
     </main>
