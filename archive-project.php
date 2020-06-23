@@ -13,8 +13,7 @@
                 <?php while (have_posts()) : the_post(); ?>
                     <li class="archive-post archive-post--<?php echo get_post_type(); ?>">
                         <a href="<?php the_permalink(); ?>" class="archive-post__link">
-                            <img src="<?php echo get_the_post_thumbnail(); ?>" alt="<?php get_post_meta(get_post_thumbnail_id(), '_wp_attachment_image_alt', true);
-                                                                                    ?>" class="archive-post__image">
+                            <?php the_post_thumbnail('large', ['class' => 'archive-post__image']); ?>
                         </a>
                     </li>
                 <?php
