@@ -1,4 +1,17 @@
 <?php
+#############################################################
+# Theme Support
+#############################################################
+
+function portfolio_features()
+{
+    add_theme_support('title-tag');
+    $post_formats = ['aside', 'image', 'gallery', 'video', 'audio', 'link', 'quote', 'status'];
+    add_theme_support('post-formats', $post_formats);
+    add_theme_support('post-thumbnails');
+    add_theme_support('html5', ['comment-list', 'comment-form', 'search-form', 'gallery', 'caption']);
+}
+add_action('after_setup_theme', 'portfolio_features');
 
 #############################################################
 # CSS & JS files
@@ -48,15 +61,6 @@ function add_to_head()
 <?php
 }
 add_action('wp_head', 'add_to_head');
-#############################################################
-# Title Tag
-#############################################################
-
-function portfolio_features()
-{
-    add_theme_support('title-tag');
-}
-add_action('after_setup_theme', 'portfolio_features');
 
 #############################################################
 # Excerpt Length
@@ -89,7 +93,6 @@ function custom_class($classes)
 }
 
 add_filter('body_class', 'custom_class');
-
 
 #############################################################
 # Breadcrumbs Function
