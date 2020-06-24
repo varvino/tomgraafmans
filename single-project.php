@@ -12,6 +12,16 @@
                     <h1 class="post__title"><?php the_title(); ?></h1>
                     <div class="post__content"><?php the_content(); ?></div>
                 </div>
+                <div class="owl-carousel owl-theme margin--lg">
+                    <?php if (have_rows('portfolio_gallery')) : ?>
+                        <?php while (have_rows('portfolio_gallery')) : the_row(); ?>
+                            <div class="carousel__item">
+                                <img src="<?php the_sub_field('image'); ?>" class="carousel__image">
+                            </div>
+                        <?php endwhile;
+                    else : ?>
+                    <?php endif; ?>
+                </div>
         <?php
             endwhile;
         endif; ?>
