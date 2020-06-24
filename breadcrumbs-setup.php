@@ -4,7 +4,7 @@ function custom_breadcrumbs()
 {
 
     // Settings
-    $separator = '&#10093;';
+    $separator = '<svg class="separator__image" width="9" height="16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M.023 15.273L7.29 8 .023.727.727.023 8.71 8 .727 15.977l-.704-.704z" fill="currentColor"/></svg>';
     $breadcrumbs_class = 'breadcrumbs';
     $home_title = 'Home';
 
@@ -27,7 +27,7 @@ function custom_breadcrumbs()
         if (is_archive() && !is_tax() && !is_category() && !is_tag()) {
 
             echo '<li class="item--current item--archive">
-        <div class="breadcrumb--current breadcrumb--archive">' . post_type_archive_title($prefix, false) . '</div>
+        <div class="breadcrumb--current breadcrumb--archive">' . post_type_archive_title(null, false) . '</div>
     </li>';
         } else if (is_archive() && is_tax() && !is_category() && !is_tag()) {
 
