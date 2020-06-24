@@ -27,8 +27,9 @@ function portfolio_files()
     #############################################################
     # Scripts
     #############################################################
+    wp_enqueue_script('jquery');
+    wp_enqueue_script('portfolio-vendor-scripts', get_theme_file_uri('/assets/js/vendor.min.js'), null, array('jquery'), true);
     wp_enqueue_script('portfolio-scripts', get_theme_file_uri('/assets/js/custom.min.js'), null, microtime(), true);
-    wp_enqueue_script('glide-js', 'https://unpkg.com/@glidejs/glide', null, array(), true);
 }
 
 add_action('wp_enqueue_scripts', 'portfolio_files');
@@ -49,19 +50,15 @@ add_action('init', 'register_menus');
 # Custom Functions
 #############################################################
 #############################################################
-# Metatags
+# Add To Head
 #############################################################
 function add_to_head()
-{
-?>
+{ ?>
     <!-- Primary Meta Tags -->
     <meta name="title" content="<?php bloginfo('name'); ?> – <?php bloginfo('description'); ?>">
     <meta name="description" content="Welkom op mijn WordPress-developer portfolio, hier vindt u mijn meest recente werk.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-
-<?php
-}
+<?php }
 add_action('wp_head', 'add_to_head');
 
 #############################################################
@@ -85,12 +82,11 @@ function add_to_footer()
                     1000:{
                         items:5
                     }
-}
+                }
             })
         });
     </script>';
 }
-add_filter('excerpt_more', 'portfolio_excerpt_more');
 
 add_action('wp_footer', 'add_to_footer', 999);
 
