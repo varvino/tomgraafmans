@@ -44,8 +44,20 @@ main {
     margin: 0;
 }
 
-.margin-vertical--xl {
-    margin: $spacing--base * 6 0;
+.margin--sm {
+    margin: 0.9375rem 0;
+}
+
+.margin--md {
+    margin: 1.875rem 0;
+}
+
+.margin--lg {
+    margin: 3.125rem 0;
+}
+
+.margin--xl {
+    margin: 6.25rem 0;
 }
 
 /* ##############################################
