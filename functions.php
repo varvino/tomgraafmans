@@ -65,36 +65,35 @@ function add_to_head()
 add_action('wp_head', 'add_to_head');
 
 #############################################################
-# Excerpt Length
+# Add To Footer
 #############################################################
-function portfolio_custom_excerpt_length($length)
+function add_to_footer()
 {
-    return 23;
+    echo '<script>
+        jQuery(function($) {
+            $(".owl-carousel").owlCarousel({
+                loop:true,
+                margin:30,
+                mouseDrag: false,
+                responsive:{
+                    0:{
+                        items:1
+                    },
+                    600:{
+                        items:3
+                    },
+                    1000:{
+                        items:5
+                    }
 }
-add_filter('excerpt_length', 'portfolio_custom_excerpt_length', 999);
-
-#############################################################
-# Excerpt More
-#############################################################
-
-function portfolio_excerpt_more($more)
-{
-    return '..';
+            })
+        });
+    </script>';
 }
 add_filter('excerpt_more', 'portfolio_excerpt_more');
 
-#############################################################
-# Custom Body Classes
-#############################################################
-function custom_class($classes)
-{
-    if (is_page_template('page-sitemap.php')) {
-        $classes[] = 'sitemap';
-    }
-    return $classes;
-}
+add_action('wp_footer', 'add_to_footer', 999);
 
-add_filter('body_class', 'custom_class');
 
 #############################################################
 # Breadcrumbs Function
