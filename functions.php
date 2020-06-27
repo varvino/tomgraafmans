@@ -71,16 +71,12 @@ function add_to_footer()
             $(".owl-carousel").owlCarousel({
                 loop:true,
                 margin:30,
-                mouseDrag: false,
                 responsive:{
                     0:{
                         items:1
                     },
                     600:{
-                        items:3
-                    },
-                    1000:{
-                        items:5
+                        items:1
                     }
                 }
             })
