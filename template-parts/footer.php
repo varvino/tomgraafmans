@@ -2,7 +2,7 @@
     <div class="cta-container margin-bottom--md">
         <div class="container flex flex-direction--column align-items--center">
             <h2 class="cta__text">Heeft mijn portfolio uw interesse gewekt?</h2>
-            <a href="<?php echo site_url('contact') ?>" class="button button--cta">Neem contact op</a>
+            <a href="<?php echo site_url('contact') ?>" class="link link--cta">Neem contact op</a>
         </div>
     </div>
     <div class="social-container margin-bottom--md">

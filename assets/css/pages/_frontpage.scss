@@ -36,14 +36,3 @@
 .recent-projects-container {
     padding-top: 1.875rem;
 }
-
-.recent-projects {
-    display              : grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap             : 1.875rem;
-}
-
-.recent-project__image {
-    height    : 200px;
-    object-fit: cover;
-}

@@ -15,7 +15,7 @@
                         <?php if (the_excerpt()) : ?>
                             <p class="archive-post__content"><?php the_excerpt(); ?></p>
                         <?php endif; ?>
-                        <a href="<?php the_permalink(); ?>" class="button--archive-post">Bekijk</a>
+                        <a href="<?php the_permalink(); ?>" class="link--archive-post">Bekijk</a>
                     </li>
                 <?php
                 endwhile; ?>

@@ -22,12 +22,14 @@ function portfolio_files()
     #############################################################
     wp_enqueue_style('dashicons');
 
+    wp_enqueue_style('bootstrap', 'https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css');
     wp_enqueue_style('portfolio-fonts', 'https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&display=swap');
     wp_enqueue_style('portfolio-styles', get_theme_file_uri('/assets/css/main.min.css'), null, microtime());
     #############################################################
     # Scripts
     #############################################################
     wp_enqueue_script('jquery');
+    wp_enqueue_script('bootstrap', 'https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js', null, array('jquery'), true);
     wp_enqueue_script('portfolio-vendor-scripts', get_theme_file_uri('/assets/js/vendor.min.js'), null, array('jquery'), true);
     wp_enqueue_script('portfolio-scripts', get_theme_file_uri('/assets/js/custom.min.js'), null, microtime(), true);
 }
@@ -73,9 +75,6 @@ function add_to_footer()
                 margin:30,
                 responsive:{
                     0:{
-                        items:1
-                    },
-                    600:{
                         items:1
                     }
                 }

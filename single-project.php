@@ -17,8 +17,10 @@
                     <div class="owl-carousel owl-theme margin--lg">
                         <?php while (have_rows('portfolio_gallery')) : the_row(); ?>
                             <div class="carousel__item">
-                                <img src="<?php the_sub_field('image'); ?>" class="carousel__image">
-                            </div>
+                                <?php $image = get_sub_field('image');
+                                if (!empty($image)) : ?>
+                                    <img src="<?php echo esc_url($image['url']); ?>" title="<?php echo esc_attr($image['title']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+                                <?php endif; ?> </div>
                         <?php endwhile;
                     else : ?>
                         <div class="margin-bottom--md"></div>
@@ -49,7 +51,7 @@
                             </li>
                         <?php endwhile; ?>
                     </ul>
-                    <a href="<?php echo site_url('projects'); ?>" class="button margin-top--md">Bekijk alle projecten</a>
+                    <a href="<?php echo site_url('projects'); ?>" class="link margin-top--md">Bekijk portfolio</a>
                 </div>
             <?php endif; ?>
 
