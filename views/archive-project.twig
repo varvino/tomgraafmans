@@ -1,0 +1,26 @@
+{% extends "index.twig" %}
+
+{% block content %}
+	<div class="margin-bottom--md">
+		{% if title %}
+			<h1>{{title}}</h1>
+		{% endif %}
+		{% if posts %}
+			<p class="archive-description">Op deze pagina vindt u al mijn projecten.</p>
+		{% endif %}
+	</div>
+
+	{% if projects is not empty %}
+		<ul class="archive-posts">
+			{% for project in projects %}
+				<li class="archive-post archive-post--{{project.post_type}}">
+					<a href="{{project.link}}" class="archive-post__link">
+						<img src="{{project.thumbnail.src}}" alt="{{project.thumbnail.alt}}" class="archive-post__image">
+					</a>
+				</li>
+			{% endfor %}
+		</ul>
+	{% endif %}
+
+
+{% endblock %}

@@ -1,20 +1,30 @@
-<head>
-    <?php
-    wp_head();
-    get_template_part('template-parts/header');
-    ?>
+<?php
 
-    <main class="container">
-        <?php if (have_posts()) :
-            while (have_posts()) :
-                the_post(); ?>
-                <div class="post">
-                    <h1 class="post__title"><?php the_title(); ?></h1>
-                    <div class="post__content"><?php the_content(); ?></div>
-                </div>
-        <?php
-            endwhile;
-        endif; ?>
-    </main>
+/**
+ * The template for displaying all pages.
+ *
+ * This is the template that displays all pages by default.
+ * Please note that this is the WordPress construct of pages
+ * and that other 'pages' on your WordPress site will use a
+ * different template.
+ *
+ * To generate specific templates for your pages you can use:
+ * /mytheme/templates/page-mypage.twig
+ * (which will still route through this PHP file)
+ * OR
+ * /mytheme/page-mypage.php
+ * (in which case you'll want to duplicate this file and save to the above path)
+ *
+ * Methods for TimberHelper can be found in the /lib sub-directory
+ *
+ * @package  WordPress
+ * @subpackage  Timber
+ * @since    Timber 0.1
+ */
 
-    <?php get_template_part('template-parts/footer'); ?>
+$context = Timber::context();
+
+$timber_post     = new Timber\Post();
+$context['post'] = $timber_post;
+$context['posts'] = new Timber\PostQuery();
+Timber::render(array('page-' . $timber_post->post_name . '.twig', 'page.twig'), $context);

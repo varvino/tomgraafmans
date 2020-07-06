@@ -40,7 +40,7 @@ module.exports = {
 	watchStyles: './assets/css/**/*.scss', // Path to all *.scss files inside css folder and inside them.
 	watchJsVendor: './assets/js/vendor/*.js', // Path to all vendor JS files.
 	watchJsCustom: './assets/js/custom/*.js', // Path to all custom JS files.
-	watchPhp: './**/*.php', // Path to all PHP files.
+	watchTwig: './**/*.twig', // Path to all PHP files.
 
 	// Translation options.
 	textDomain: 'WPGULP', // Your textdomain here.

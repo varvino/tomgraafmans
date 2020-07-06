@@ -1,0 +1,9 @@
+<nav class="navmenu js-navmenu">
+	{% for item in header_menu.items %}
+		<a class="navmenu__link" href="{{ item.link }}">
+			<div class="navmenu__item {{ item.classes|join(' ') }}">
+				{{ item.title }}
+			</div>
+		</a>
+	{% endfor %}
+</nav>

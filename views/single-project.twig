@@ -1,0 +1,35 @@
+{% extends "base.twig" %}
+
+{% block content %}
+	{% if posts is not empty %}
+		{% for post in posts %}
+			<article class="post">
+				<h1 class="post__title">{{post.title}}</h2>
+				<div class="post__content">{{post.content}}</div>
+			</article>
+		{% endfor %}
+	{% endif %}
+
+	{% if post.meta('project_item_gallery') is not empty %}
+		{% for item in post.meta('project_item_gallery') %}
+			<img src="{{Image(item.image).src}}" alt="{{Image(item.image).alt}}">
+		{% endfor %}
+	{% else %}
+		<div class="margin-bottom--md"></div>
+	{% endif %}
+
+	{% if projects is not empty %}
+		<h3 class="title--sm">Meer projecten</h3>
+		<ul class="archive-posts">
+			{% for project in projects %}
+				<li class="archive-post archive-post--{{project.post_type}}">
+					<a href="{{project.link}}" class="archive-post__link">
+						<img src="{{project.thumbnail.src}}" alt="{{project.thumbnail.alt}}" class="archive-post__image">
+					</a>
+				</li>
+			{% endfor %}
+		</ul>
+		<a href="{{site.link}}/projects" class="link margin-top--md">Bekijk portfolio</a>
+	{% endif %}
+
+{% endblock %}

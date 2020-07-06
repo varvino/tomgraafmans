@@ -1,0 +1,19 @@
+{# This file demonstrates using most of the index.twig template and modifying 
+   just a small part. See `search.twig` for an example of another approach #}
+
+{% extends "index.twig" %}
+
+{% block content %}
+
+	<h1>{{post.type.title}}</h1>
+
+	<ul class="archive-posts">
+		{% for post in projects %}
+			<li class="archive-post">
+				<h3 class="archive-post__title">{{post.title}}</h3>
+				<p class="archive-post__content">{{post.excerpt}}</p>
+				<a href="{{post.link}}" class="link--archive-post">Bekijk</a>
+			</li>
+		{% endfor %}
+	</ul>
+{% endblock %}
