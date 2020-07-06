@@ -73,7 +73,7 @@ input,textarea{max-width:100%;border:0;background-color:rgba(87,32,82,0.1);paddi
 textarea{min-height:18.75rem}
 .navbar{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;-webkit-box-align:center;-ms-flex-align:center;align-items:center}
 .navmenu{display:none}
-.js-navmenu--toggled{display:block;z-index:999;position:fixed;top:100px;right:30px;background-color:white;border-radius:.3125rem;padding:1.875rem}
+.js-navmenu--toggled{display:block;z-index:999;position:fixed;top:0;bottom:0;left:0;background-color:white;padding:1.875rem}
 .backdrop{z-index:998;position:fixed;top:0;left:0;right:0;bottom:0;background-color:rgba(31,11,29,0.25)}
 .navigation{margin:0;padding:0}
 .menu-item{list-style:none;padding:0;margin:0 0 1rem;width:100%}

@@ -5,9 +5,11 @@
 <body class="{{body_class}}" data-template="base.twig">
 	<header>
 		{% block header %}
-			<div class="navbar navbar-expand-md">
-				{% include "partials/logo.twig" %}
-				{% include "partials/navigation.twig" %}
+			<div class="container">
+				<div class="navbar navbar-expand-md">
+					{% include "partials/logo.twig" %}
+					{% include "partials/navigation.twig" %}
+				</div>
 			</div>
 		{% endblock %}
 	</header>
