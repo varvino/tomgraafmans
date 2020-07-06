@@ -168,3 +168,11 @@ class StarterSite extends Timber\Site
 }
 
 new StarterSite();
+
+function portfolio_files()
+{
+	wp_enqueue_style('dashicons');
+	wp_enqueue_script('jquery');
+}
+
+add_action('wp_enqueue_scripts', 'portfolio_files');
