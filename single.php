@@ -12,7 +12,7 @@
 
 $project_args = array(
 	'post_type' => 'project',
-	'posts_per_page' => 2,
+	'posts_per_page' => 3,
 	'post_status' => 'publish',
 	'orderby' => 'rand',
 	'post__not_in' => array(get_the_ID())
