@@ -93,7 +93,7 @@ class StarterSite extends Timber\Site
 		$footer_menu_args = array([
 			'theme_location' => 'footer-menu'
 		]);
-		
+
 		$context['projects'] = new Timber\PostQuery($project_args);
 		$context['header_menu']  = new Timber\Menu('header-menu', $header_menu_args);
 		$context['footer_menu']  = new Timber\Menu('footer-menu', $footer_menu_args);
@@ -207,3 +207,7 @@ function portfolio_inits()
 }
 
 add_action('wp_footer', 'portfolio_inits', 999);
+
+@ini_set('upload_max_size', '64M');
+@ini_set('post_max_size', '64M');
+@ini_set('max_execution_time', '300');
