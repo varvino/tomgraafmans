@@ -16,3 +16,12 @@
     max-width: 150px;
     margin   : 0 auto;
 }
+
+.social__icon {
+    color     : $color--primary;
+    transition: .25s all ease;
+
+    &:hover {
+        transform: scale(1.15);
+    }
+}
