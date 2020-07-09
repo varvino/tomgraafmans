@@ -207,7 +207,3 @@ function portfolio_inits()
 }
 
 add_action('wp_footer', 'portfolio_inits', 999);
-
-@ini_set('upload_max_size', '64M');
-@ini_set('post_max_size', '64M');
-@ini_set('max_execution_time', '300');
