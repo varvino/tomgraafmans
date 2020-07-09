@@ -9,7 +9,9 @@
 var hamburger = document.querySelector('.js-hamburger');
 var navmenu = document.querySelector('.js-navmenu');
 var navmenuHeading = document.createElement('h2');
-navmenuHeading.appendChild(document.createTextNode('Menu')); // ---------------------------- //
+navmenuHeading.appendChild(document.createTextNode('Hoofdmenu'));
+var navmenuHeadingBottom = document.createElement('h2');
+navmenuHeadingBottom.appendChild(document.createTextNode('Meer links')); // ---------------------------- //
 // Backdrop variables
 // ---------------------------- //
 
@@ -24,7 +26,8 @@ hamburger.addEventListener("click", function () {
   // Give the navmenu container a dynamic class
   navmenu.classList.toggle('js-navmenu--toggled'); // Add a menu heading to the navmenu (mobile only)
 
-  navmenu.prepend(navmenuHeading); // ---------------------------------------- //
+  navmenu.prepend(navmenuHeading);
+  document.querySelector('.navmenu-bottom').prepend(navmenuHeadingBottom); // ---------------------------------------- //
   // Backdrop related JS
   // ---------------------------------------- //
   // Append the backdrop div to the body element

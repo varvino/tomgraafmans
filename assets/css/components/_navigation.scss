@@ -4,16 +4,25 @@
     align-items    : center;
 }
 
+.navmenu-bottom {
+    margin-top: auto;
+
+    @include medium {
+        display: none;
+    }
+}
+
 .navmenu {
     display: none;
 
     @include medium {
-        display: block;
+        display: inline-flex;
     }
 }
 
 .js-navmenu--toggled {
-    display         : block;
+    display         : flex;
+    flex-direction  : column;
     z-index         : 999;
     position        : fixed;
     top             : 0;
@@ -38,11 +47,23 @@
     padding: 0;
 }
 
-.menu-item {
+.navmenu__link {
     list-style: none;
     padding   : 0;
     margin    : 0 0 1rem;
     width     : 100%;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    @include medium {
+        margin: 0 1.875rem 0 0;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
 }
 
 .hamburger {

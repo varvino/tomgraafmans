@@ -7,8 +7,12 @@
 // ---------------------------- //
 const hamburger = document.querySelector('.js-hamburger')
 const navmenu = document.querySelector('.js-navmenu')
+
 const navmenuHeading = document.createElement('h2')
-navmenuHeading.appendChild(document.createTextNode('Menu'))
+navmenuHeading.appendChild(document.createTextNode('Hoofdmenu'))
+
+const navmenuHeadingBottom = document.createElement('h2')
+navmenuHeadingBottom.appendChild(document.createTextNode('Meer links'))
 
 // ---------------------------- //
 // Backdrop variables
@@ -29,6 +33,7 @@ hamburger.addEventListener("click", function () {
 
     // Add a menu heading to the navmenu (mobile only)
     navmenu.prepend(navmenuHeading)
+    document.querySelector('.navmenu-bottom').prepend(navmenuHeadingBottom)
 
     // ---------------------------------------- //
     // Backdrop related JS
