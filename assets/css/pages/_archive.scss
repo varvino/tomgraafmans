@@ -4,12 +4,19 @@
 
 .archive-items {
     margin               : 0;
+    padding              : 0;
+    display              : grid;
+    gap                  : 1.875rem;
+    grid-template-columns: repeat(2, 1fr);
+
+    @include medium {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
 
 .archive-item {
     list-style   : none;
     border-bottom: 0.0625rem solid #ccc;
-
 
     &:last-child {
         margin       : 0;
@@ -22,22 +29,28 @@
     margin       : 0;
     padding      : 0;
     border-bottom: 0;
-    flex-grow    : 1;
-    flex-basis   : calc(50% - 1.875rem);
-    margin-bottom: 1.875rem;
 
-    &:last-child,
-    &:nth-last-child(2) {
-        margin-bottom: 0;
+    &:last-child {
+        display: none;
+
+        @include medium {
+            display: block;
+        }
     }
+}
+
+.archive {
 
     .archive-items {
         @include large {
+            grid-template-columns: repeat(4, 1fr);
+        }
     }
 
-    // Removed margin right on last child so that when theres only one portfolio item it takes up the entire width.
-    &:last-child {
-        margin-right: 0;
+    .archive-item--project {
+        &:last-child {
+            display: block;
+        }
     }
 }
 
