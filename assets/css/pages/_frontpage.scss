@@ -1,21 +1,79 @@
+.home {
+    header {
+        padding-bottom: 0;
+    }
+
+    main {
+        @include medium {
+            padding-top: 4.6875rem;
+        }
+
+        @include large {
+            padding-top: 6.25rem;
+        }
+    }
+}
+
 .hero-container {
     padding-bottom: 1.875rem;
+
+    >* {
+        @include medium {
+            max-width: 550px;
+        }
+
+        @include large {
+            max-width: 750px;
+        }
+    }
+
+    @include medium {
+        padding-bottom: 4.6875rem;
+    }
+
+    @include large {
+        padding-bottom: 6.25rem;
+    }
 }
 
 .hero__title {
     font-size    : 3rem;
     margin-bottom: 0;
+
+    @include medium {
+        font-size: 3.5rem;
+    }
+
+    @include large {
+        font-size: 4.25rem;
+    }
 }
 
 .hero__subtitle {
     font-weight: 400;
     font-size  : 2.25rem;
     color      : $color--primary;
+
+    @include medium {
+        font-size: 2.75rem;
+    }
+
+    @include large {
+        font-size: 3.25rem;
+    }
 }
 
 .overview-container {
     padding         : 1.875rem 0;
     background-color: transparentize($color: $color--primary, $amount: 0.95);
+
+    @include medium {
+        padding: 4.6875rem 0;
+    }
+
+    @include large {
+        padding: 6.25rem 0;
+    }
 }
 
 .overview__text {
@@ -35,4 +93,12 @@
 
 .recent-projects-container {
     padding-top: 1.875rem;
+
+    @include medium {
+        padding-top: 4.6875rem;
+    }
+
+    @include large {
+        padding-top: 6.25rem;
+    }
 }

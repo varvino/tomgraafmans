@@ -28,8 +28,12 @@ main {
     padding-top   : 1.25rem;
     padding-bottom: 1.875rem;
 
-    &.home {
-        padding-top: 1.875rem;
+    @include medium {
+        padding: 3.125rem 0 4.6875rem;
+    }
+
+    @include large {
+        padding: 4.6875rem 0 7.8125rem;
     }
 }
 
@@ -244,4 +248,29 @@ main {
 
 .justify-content--space-between {
     justify-content: space-between;
+}
+
+// Hidden
+.hidden--sm {
+    @include small {
+        display: none;
+    }
+}
+
+.hidden--md {
+    @include medium {
+        display: none;
+    }
+}
+
+.hidden--lg {
+    @include large {
+        display: none;
+    }
+}
+
+.hidden--xl {
+    @include extra-large {
+        display: none;
+    }
 }

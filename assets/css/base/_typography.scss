@@ -8,6 +8,14 @@ h6 {
     margin-bottom: $spacing--base;
     font-family  : $font-family--headings;
     font-weight  : 600;
+
+    @include medium {
+        margin-bottom: 1.5rem;
+    }
+
+    @include large {
+        margin-bottom: 1.875rem;
+    }
 }
 
 a {

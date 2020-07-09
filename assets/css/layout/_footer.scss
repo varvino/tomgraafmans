@@ -2,11 +2,24 @@
     background-color: $color--primary;
     color           : white;
     padding         : 1.875rem 0;
+
+    @include medium {
+        padding: 4.6875rem 0;
+    }
+
+    @include large {
+        padding: 6.25rem 0;
+    }
 }
 
 .cta__text {
     margin-bottom: 1.875rem;
     text-align   : center;
+
+    @include medium {
+        font-size: 2.5rem;
+        max-width: 400px;
+    }
 }
 
 .social__icons {
