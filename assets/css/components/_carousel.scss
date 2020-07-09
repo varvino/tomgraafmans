@@ -6,3 +6,20 @@
 .owl-theme .owl-dots .owl-dot span {
     background-color: transparentize($color: $color--primary, $amount: 0.75) !important;
 }
+
+.owl-carousel {
+    padding: 1.875rem 0;
+
+    @include medium {
+        padding: 4.6875rem 0;
+    }
+}
+
+
+.carousel__item {
+    @include medium {
+        max-width : 400px;
+        max-height: 400px;
+        margin    : 0 auto;
+    }
+}
