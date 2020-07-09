@@ -11,11 +11,11 @@
 	</div>
 
 	{% if projects is not empty %}
-		<ul class="archive-posts">
+		<ul class="archive-items">
 			{% for project in projects %}
-				<li class="archive-post archive-post--{{project.post_type}}">
-					<a href="{{project.link}}" class="archive-post__link">
-						<img src="{{project.thumbnail.src}}" alt="{{project.thumbnail.alt}}" class="archive-post__image">
+				<li class="archive-item archive-item--{{project.post_type}}">
+					<a href="{{project.link}}" class="archive-item__link">
+						<img src="{{project.thumbnail.src}}" alt="{{project.thumbnail.alt}}" class="archive-item__image">
 					</a>
 				</li>
 			{% endfor %}
