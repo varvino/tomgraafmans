@@ -22,10 +22,17 @@
     color           : white;
 }
 
-.link--cta {
-    color  : white;
-    padding: 0.625rem;
-    border : 0.0625rem solid;
+.button--cta {
+    color     : white;
+    padding   : 0.625rem;
+    border    : 0.0625rem solid;
+    transition: .25s all ease;
+
+    &:hover {
+        text-decoration : none;
+        background-color: white;
+        color           : $color--primary;
+    }
 }
 
 .link--archive-item {
