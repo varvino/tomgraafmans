@@ -1,5 +1,6 @@
 input,
 textarea {
+    width           : 100%;
     max-width       : 100%;
     border          : 0;
     background-color: transparentize($color: $color--primary, $amount: 0.9);
@@ -11,4 +12,21 @@ textarea {
 
 textarea {
     min-height: 18.75rem;
+}
+
+.wpcf7 form.invalid .wpcf7-response-output,
+.wpcf7 form.unaccepted .wpcf7-response-output {
+    border       : 0.0625rem solid;
+    border-color : $color--primary !important;
+    border-radius: 0.3125rem;
+    padding      : 0.9375rem;
+    margin       : 0;
+}
+
+.wpcf7-submit {
+    text-align      : center;
+    background-color: $color--primary;
+    color           : white;
+    padding         : 0.9375rem 1.875rem;
+    width           : initial;
 }
