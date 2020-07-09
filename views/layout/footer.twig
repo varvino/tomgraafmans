@@ -1,12 +1,12 @@
 {% if fn('is_page', 'contact') %}
 	<hr class="margin-bottom--lg">
 {% else %}
-<div class="cta-container margin-bottom--md">
-	<div class="container flex flex-direction--column align-items--center">
-		<h2 class="cta__text">Heeft mijn portfolio uw interesse gewekt?</h2>
-		<a href="{{site.link}}/contact" class="link link--cta">Neem contact op</a>
+	<div class="cta-container margin-bottom--md">
+		<div class="container flex flex-direction--column align-items--center">
+			<h2 class="cta__text">Heeft mijn portfolio uw interesse gewekt?</h2>
+			<a href="{{site.link}}/contact" class="link link--cta">Neem contact op</a>
+		</div>
 	</div>
-</div>
 {% endif %}
 
 <div class="social-container margin-bottom--md">
@@ -32,8 +32,5 @@
 		&mdash; Tom Graafmans
 	</div>
 </div>
-
-<script src="{{site.theme.link}}/assets/js/vendor.min.js"></script>
-<script src="{{site.theme.link}}/assets/js/custom.min.js?id=2403"></script>
 
 {{ function('wp_footer') }}

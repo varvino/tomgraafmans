@@ -169,10 +169,36 @@ class StarterSite extends Timber\Site
 
 new StarterSite();
 
-function portfolio_files()
+function portfolio_styles()
 {
 	wp_enqueue_style('dashicons');
-	wp_enqueue_script('jquery');
+	wp_enqueue_style('google_fonts', 'https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&display=swap', array(), null);
+	wp_enqueue_style('portfolio_styles', get_theme_file_uri() . '/assets/css/main.min.css', microtime());
 }
 
-add_action('wp_enqueue_scripts', 'portfolio_files');
+add_action('wp_enqueue_scripts', 'portfolio_styles');
+
+function portfolio_scripts()
+{
+	wp_enqueue_script('jquery');
+	wp_enqueue_script('portfolio_vendor_scripts', get_theme_file_uri() . '/assets/js/vendor.min.js', array('jquery'), microtime(), true);
+	wp_enqueue_script('portfolio_custom_scripts', get_theme_file_uri() . '/assets/js/custom.min.js', null, microtime(), true);
+}
+
+add_action('wp_enqueue_scripts', 'portfolio_scripts');
+
+function portfolio_inits()
+{
+	echo '<script>
+	jQuery(function($){
+		$(".owl-carousel").owlCarousel({
+			loop: true,
+			margin: 10,
+			nav: true,
+			responsive: { 0: {items: 1}}
+			});
+	});
+	</script>';
+}
+
+add_action('wp_footer', 'portfolio_inits', 999);
