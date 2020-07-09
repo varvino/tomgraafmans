@@ -85,14 +85,19 @@ class StarterSite extends Timber\Site
 		);
 
 		// Header Menu
-		$menu_args = array([
-			'theme_location' => 'header-menu',
-			'container_class' => 'navigation-container',
-			'items_wrap' => '<ul class="navigation js-navigation">%3$s</ul>',
+		$header_menu_args = array([
+			'theme_location' => 'header-menu'
 		]);
 
+		// Footer Menu
+		$footer_menu_args = array([
+			'theme_location' => 'footer-menu'
+		]);
+		
 		$context['projects'] = new Timber\PostQuery($project_args);
-		$context['header_menu']  = new Timber\Menu(null, $menu_args);
+		$context['header_menu']  = new Timber\Menu('header-menu', $header_menu_args);
+		$context['footer_menu']  = new Timber\Menu('footer-menu', $footer_menu_args);
+
 		$context['site']  = $this;
 
 		return $context;
