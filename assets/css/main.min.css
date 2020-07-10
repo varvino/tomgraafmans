@@ -97,8 +97,9 @@ header{padding:1.875rem 0}
 .social__icon:hover{-webkit-transform:scale(1.15);transform:scale(1.15)}
 .archive-description{margin-bottom:1.875rem}
 .archive-items{margin:0;padding:0;display:grid;gap:1.875rem;grid-template-columns:repeat(2,1fr)}
-.archive-item{list-style:none;border-bottom:.0625rem solid #ccc}
+.archive-item{list-style:none;border-bottom:.0625rem solid #ccc;-webkit-transition:.25s all ease;transition:.25s all ease}
 .archive-item:last-child{margin:0;padding:0;border-bottom:0}
+.archive-item:hover{-webkit-transform:scale(1.03);transform:scale(1.03)}
 .archive-item--project{margin:0;padding:0;border-bottom:0}
 .archive-item--project:last-child{display:none}
 .archive .archive-item--project:last-child{display:block}

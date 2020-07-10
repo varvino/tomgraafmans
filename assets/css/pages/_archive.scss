@@ -17,11 +17,16 @@
 .archive-item {
     list-style   : none;
     border-bottom: 0.0625rem solid #ccc;
+    transition: .25s all ease;
 
     &:last-child {
         margin       : 0;
         padding      : 0;
         border-bottom: none;
+    }
+
+    &:hover{
+        transform: scale(1.03);
     }
 }
 
