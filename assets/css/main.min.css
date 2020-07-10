@@ -63,6 +63,7 @@ hr{border:0;width:100%;height:.0625rem;background-color:#ccc}
 .link:before,.button:before,.link--archive-item:before{content:"\f344";font-family:"Dashicons";margin-right:1rem}
 .button{border:0;outline:0}
 .button--primary{background-color:#572052;color:white}
+.button--primary:hover{background-color:#582053}
 .button--cta{color:white;padding:.625rem;border:.0625rem solid;-webkit-transition:.25s all ease;transition:.25s all ease}
 .button--cta:hover{text-decoration:none;background-color:white;color:#572052}
 .owl-dots{margin-top:1.875rem !important}
@@ -70,10 +71,11 @@ hr{border:0;width:100%;height:.0625rem;background-color:#ccc}
 .owl-dot span{background-color:rgba(87,32,82,0.25) !important}
 .owl-carousel{padding:1.875rem 0}
 .logo__image{max-width:3.125rem}
-input,textarea{width:100%;max-width:100%;border:0;background-color:rgba(87,32,82,0.1);padding:.9375rem;border-radius:.3125rem;font-size:100%;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Open Sans","Helvetica Neue",sans-serif}
+input,textarea{width:100%;max-width:100%;border:0;outline:0;background-color:rgba(87,32,82,0.1);padding:.9375rem;border-radius:.3125rem;font-size:100%;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Open Sans","Helvetica Neue",sans-serif}
 textarea{min-height:18.75rem}
 .wpcf7 form.invalid .wpcf7-response-output,.wpcf7 form.unaccepted .wpcf7-response-output{border:.0625rem solid;border-color:#572052 !important;border-radius:.3125rem;padding:.9375rem;margin:0}
-.wpcf7-submit{text-align:center;background-color:#572052;color:white;padding:.9375rem 1.875rem;width:initial}
+.wpcf7-submit{text-align:center;background-color:#572052;color:white;padding:.9375rem 1.875rem;width:initial;cursor:pointer;-webkit-transition:.25s all ease;transition:.25s all ease;outline:0}
+.wpcf7-submit:hover{-webkit-transform:scale(1.05);transform:scale(1.05)}
 .navbar{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;-webkit-box-align:center;-ms-flex-align:center;align-items:center}
 .navmenu-bottom{margin-top:auto}
 .navmenu{display:none}

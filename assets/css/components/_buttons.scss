@@ -20,6 +20,10 @@
 .button--primary {
     background-color: $color--primary;
     color           : white;
+
+    &:hover{
+        background-color: lighten($color: $color--primary, $amount: 0.2);
+    }
 }
 
 .button--cta {
