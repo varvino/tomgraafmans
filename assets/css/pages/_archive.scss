@@ -17,7 +17,7 @@
 .archive-item {
     list-style   : none;
     border-bottom: 0.0625rem solid #ccc;
-    transition: .25s all ease;
+    transition   : .25s all ease;
 
     &:last-child {
         margin       : 0;
@@ -25,7 +25,7 @@
         border-bottom: none;
     }
 
-    &:hover{
+    &:hover {
         transform: scale(1.03);
     }
 }
@@ -35,7 +35,7 @@
     padding      : 0;
     border-bottom: 0;
 
-    &:last-child {
+    &:nth-child(n+3) {
         display: none;
 
         @include medium {
@@ -53,7 +53,7 @@
     }
 
     .archive-item--project {
-        &:last-child {
+        &:nth-child(n+3) {
             display: block;
         }
     }
