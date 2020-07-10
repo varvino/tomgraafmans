@@ -11,11 +11,11 @@
 	{% endif %}
 
 	{% if post.meta('project_item_gallery') is not empty %}
-		{% for item in post.meta('project_item_gallery') %}
-			<div class="owl-carousel owl-theme margin--lg">
+		<div class="owl-carousel owl-theme margin--lg">
+			{% for item in post.meta('project_item_gallery') %}
 				<img src="{{Image(item.image).src}}" {% if Image(item.image).alt %} alt="{{Image(item.image).alt}}" {% endif %} class="carousel__item">
-			</div>
-		{% endfor %}
+			{% endfor %}
+		</div>
 	{% else %}
 		<div class="margin-bottom--md"></div>
 	{% endif %}
