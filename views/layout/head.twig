@@ -17,7 +17,23 @@
 		<link rel="manifest" href="{{theme.link}}/assets/img/favicon//site.webmanifest">
 		<link rel="mask-icon" href="{{theme.link}}/assets/img/favicon//safari-pinned-tab.svg" color="#5bbad5">
 		<meta name="msapplication-TileColor" content="#da532c">
-		<meta name="theme-color" content="#572052">
+		<meta
+		name="theme-color" content="#572052">
+
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content="website">
+		<meta property="og:url" content="{{site.url}}">
+		<meta property="og:title" content="{{site.name}} – {{site.description}}">
+		<meta property="og:description" content="Welkom op mijn WordPress-developer portfolio, hier vindt u mijn meest recente werk.">
+		<meta
+		property="og:image" content="{{theme.link}}/assets/img/metatag_image.jpg">
+
+		<!-- Twitter -->
+		<meta property="twitter:card" content="summary_large_image">
+		<meta property="twitter:url" content="{{site.url}}">
+		<meta property="twitter:title" content="{{site.name}} – {{site.description}}">
+		<meta property="twitter:description" content="Welkom op mijn WordPress-developer portfolio, hier vindt u mijn meest recente werk.">
+		<meta property="twitter:image" content="{{theme.link}}/assets/img/metatag_image.jpg">
 
 		{{function('wp_head')}}
 	</head>
