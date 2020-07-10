@@ -1,9 +1,13 @@
-.owl-theme .owl-dots .owl-dot.active span,
-.owl-theme .owl-dots .owl-dot:hover span {
+.owl-dots {
+    margin-top: 1.875rem !important;
+}
+
+.owl-dot.active span,
+.owl-dot:hover span {
     background: $color--primary !important;
 }
 
-.owl-theme .owl-dots .owl-dot span {
+.owl-dot span {
     background-color: transparentize($color: $color--primary, $amount: 0.75) !important;
 }
 
