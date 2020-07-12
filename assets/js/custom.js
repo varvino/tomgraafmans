@@ -43,4 +43,16 @@ backdrop.addEventListener('click', function () {
   navmenu.classList.remove('js-navmenu--toggled');
   backdrop.classList.remove('backdrop');
   hamburger.classList.remove('hamburger--white');
+}); // Remove navmenu when backdrop is clicked
+
+backdrop.addEventListener('drag', function () {
+  navmenu.classList.remove('js-navmenu--toggled');
+  backdrop.classList.remove('backdrop');
+  hamburger.classList.remove('hamburger--white');
+}); // Remove navmenu when backdrop is clicked
+
+backdrop.addEventListener('scroll', function () {
+  navmenu.classList.remove('js-navmenu--toggled');
+  backdrop.classList.remove('backdrop');
+  hamburger.classList.remove('hamburger--white');
 });
