@@ -47,3 +47,10 @@ hamburger.addEventListener("click", function () {
     // Give the hamburger a dynamic class, and thus make the hamburger white
     hamburger.classList.toggle('hamburger--white')
 })
+
+// Remove navmenu when backdrop is clicked
+backdrop.addEventListener('click', function () {
+    navmenu.classList.remove('js-navmenu--toggled')
+    backdrop.classList.remove('backdrop')
+    hamburger.classList.remove('hamburger--white')
+})
