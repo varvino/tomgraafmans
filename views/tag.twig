@@ -1,0 +1,18 @@
+{% extends "index.twig" %}
+
+{% block content %}
+	<section class="archive">
+		<div class="section__header">
+			<h2 class="section__title">{{term_page.name}}</h2>
+			<p class="section__text">{{term_page.description}}</p>
+		</div>
+
+		{% if term_page.posts is not empty %}
+			<div class="archive-items grid grid-column--two">
+				{% for project in term_page.posts %}
+					{% include "partials/archive-item.twig" %}
+				{% endfor %}
+			</div>
+		{% endif %}
+	</section>
+{% endblock %}

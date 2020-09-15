@@ -1,40 +1,162 @@
-.cta-container {
-    background-color: $color--primary;
-    color           : white;
-    padding         : 1.875rem 0;
+/* ========================================================
+    FOOTER
+    ======================================================== */
+/* ========================================================
+    GENERAL
+    ======================================================== */
+footer {
+    background-color: $primary-color;
+    color           : $background-color;
+    padding         : $spacing--md 0;
 
     @include medium {
-        padding: 4.6875rem 0;
+        padding-top: 4.6875rem;
     }
 
     @include large {
-        padding: 6.25rem 0;
+        padding-top: $spacing--lg;
+    }
+
+    .logo__text {
+        color: $background-color;
+    }
+
+    a,
+    .copyright {
+        color: transparentize($color: $background-color, $amount: 0.35);
+    }
+
+    .divider {
+        margin: $spacing--md 0;
+    }
+
+    .button {
+        background-color: transparent;
+        border-color    : $background-color;
     }
 }
 
-.cta__text {
-    margin-bottom: 1.875rem;
-    text-align   : center;
+/* ========================================================
+    GENERAL //END
+    ======================================================== */
+
+/* ========================================================
+    CALL TO ACTION
+    ======================================================== */
+.cta-container {
+    text-align: center;
 
     @include medium {
-        font-size: 2.5rem;
-        max-width: 400px;
+        margin-bottom: 4.6875rem;
+    }
+
+    @include large {
+        margin-bottom: $spacing--lg;
     }
 }
 
-.social__icons {
-    display        : flex;
-    justify-content: space-between;
+.cta-container {
+    @extend .container;
+    @extend .flex;
+    @extend .flex-column;
 
-    max-width: 150px;
-    margin   : 0 auto;
-}
+    .text {
+        margin-bottom: $spacing--sm;
+    }
 
-.social__icon {
-    color     : $color--primary;
-    transition: .25s all ease;
-
-    &:hover {
-        transform: scale(1.15);
+    .button {
+        align-self: center;
     }
 }
+
+/* ========================================================
+    CALL TO ACTION //END
+    ======================================================== */
+/* ========================================================
+    FOOTER'S FOOTER
+    ======================================================== */
+.footer-container {
+    @extend .container;
+    @extend .grid;
+    grid-template-columns: 1fr;
+
+    @include large {
+        grid-template-columns: 0.5fr 1fr;
+    }
+}
+
+/* ========================================================
+    SITE INFORMATION
+    ======================================================== */
+.site-information {
+    @include small {
+        margin-bottom: $spacing--sm;
+    }
+
+    @include medium {
+        grid-row: 2;
+    }
+
+    @include large {
+        grid-row: 1;
+    }
+
+    .logo {
+        font-size    : 2rem;
+        margin-bottom: 0.625rem;
+    }
+
+    .logo__image {
+        width: 2.5rem;
+    }
+}
+
+/* ========================================================
+    LINKS
+    ======================================================== */
+.links-container {
+    @extend .grid;
+    @extend .grid-column--three;
+    gap: $spacing--sm;
+
+    @include medium {
+        gap          : $spacing--md;
+        margin-bottom: $spacing--md;
+    }
+
+    @include large {
+        gap          : $spacing--lg;
+        margin-bottom: 0;
+    }
+}
+
+.footer-item__title {
+    font-weight  : 700;
+    margin-bottom: 0.625rem;
+}
+
+.contact-links {
+    >* {
+        margin-bottom: 0.625rem;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.footer-item__link {
+    display      : block;
+    margin-bottom: 0.625rem;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+/* ========================================================
+    FOOTER'S FOOTER //END
+    ======================================================== */
+/* ========================================================
+    FOOTER //END
+    ======================================================== */

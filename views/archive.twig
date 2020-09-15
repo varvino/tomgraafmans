@@ -1,19 +1,18 @@
-{# This file demonstrates using most of the index.twig template and modifying 
-   just a small part. See `search.twig` for an example of another approach #}
-
 {% extends "index.twig" %}
 
 {% block content %}
+	<section class="archive">
+		<div class="section__header">
+			<h2 class="section__title">{{title}}</h2>
+			<p class="section__text">Op deze pagina vindt u mijn recente projecten.</p>
+		</div>
 
-	<h1>{{post.type.title}}</h1>
-
-	<ul class="archive-items">
-		{% for post in projects %}
-			<li class="archive-item">
-				<h3 class="archive-item__title">{{post.title}}</h3>
-				<p class="archive-item__content">{{post.excerpt}}</p>
-				<a href="{{post.link}}" class="link--archive-item">Bekijk</a>
-			</li>
-		{% endfor %}
-	</ul>
+		{% if projects is not empty %}
+			<div class="archive-items grid grid-column--two">
+				{% for project in projects %}
+					{% include "partials/archive-item.twig" %}
+				{% endfor %}
+			</div>
+		{% endif %}
+	</section>
 {% endblock %}

@@ -1,0 +1,7 @@
+.services {
+    @extend .archive-item__tags;
+}
+
+.service {
+    @extend .archive-item__tag;
+}

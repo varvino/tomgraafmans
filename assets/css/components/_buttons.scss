@@ -1,40 +1,57 @@
-.link {
-    display      : inline-flex;
-    align-items  : center;
-    text-align   : center;
-    border-radius: 0.3125rem;
+.button {
+    display         : inline-flex;
+    align-items     : center;
+    justify-content : center;
+    padding         : 0.5rem 1.5rem;
+    border-radius   : 0.3125rem;
+    text-decoration : none;
+    transition      : .5s all ease;
+    background-color: $primary-color;
+    color           : $background-color;
+    border          : 0.0625rem solid transparent;
 
-    &:before {
-        content     : "\f344";
-        font-family : "Dashicons";
-        margin-right: $spacing--base;
+    &:hover {
+        background-color: transparent;
+        color           : $primary-color;
+        border-color    : $primary-color;
+        text-decoration : none;
     }
+
+    &:after {
+        display    : inline-block;
+        font-family: "Dashicons";
+        content    : "\f344";
+        margin-left: 0.625rem;
+    }
+}
+
+.button--rounded-full {
+    border-radius: 62.4375rem;
 }
 
 .button {
-    @extend .link;
-    border : 0;
-    outline: 0;
+    @extend .button;
+
 }
 
-.button--primary {
-    background-color: $color--primary;
-    color           : white;
-}
+.link {
+    display        : inline-flex;
+    align-items    : center;
+    justify-content: center;
+    position       : relative;
+    transition     : .25s all ease;
+    font-weight    : 700;
 
-.button--cta {
-    color     : white;
-    padding   : 0.625rem;
-    border    : 0.0625rem solid;
-    transition: .25s all ease;
+
+    &:before {
+        display     : inline-block;
+        font-family : "Dashicons";
+        content     : "\f344";
+        margin-right: 0.625rem;
+    }
 
     &:hover {
-        text-decoration : none;
-        background-color: white;
-        color           : $color--primary;
+        text-decoration: none;
+        margin-left    : 0.625rem;
     }
-}
-
-.link--archive-item {
-    @extend .link;
 }

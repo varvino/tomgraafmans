@@ -1,51 +1,128 @@
 {% extends "base.twig" %}
 
 {% block content %}
-	<div class="container hero-container">
-		<h2 class="hero__subtitle">Hallo, ik ben Tom</h2>
-		<h1 class="hero__title">Een junior WordPress developer</h1>
-	</div>
-
-	<div class="overview-container">
-		<div class="container">
-
-			{% for post in posts %}
-				<div class="overview__text">
-					{{post.content}}
-				</div>
-			{% endfor %}
-
-			<div class="overview__inner-container">
-				<h3 class="title--sm">Portfolio</h3>
-				<p>Bekijk hier een overzicht van al mijn werk.</p>
-				<a href="{{site.link}}/projects" class="link">Bekijk portfolio</a>
-			</div>
-			<div class="overview__inner-container">
-				<h3 class="title--sm">Curriculum Vitae</h3>
-				<p>Voor een uitgebreidere kijk op mijn vaardigheden verwijs ik u naar mijn CV.</p>
-				{% for post in posts %}
-					<a href="{{post.meta('resume_download').url}}" target="_blank" class="link">Bekijk CV</a>
-				{% endfor %}
-			</div>
-		</div>
-	</div>
-
 	{% if projects is not empty %}
-		<div class="container recent-projects-container">
-			<h3 class="title--sm">Recent werk</h3>
-			<p>Hieronder vindt u wat van mijn recente werk.</p>
-
-			<ul class="archive-items">
-				{% for item in projects %}
-					<li class="archive-item archive-item--{{item.post_type}}">
-						<a href="{{item.link}}" class="archive-item__link">
-							<img src="{{item.thumbnail.src}}" alt="{{item.thumbnail.alt}}" class="archive-item__image">
-						</a>
-					</li>
-				{% endfor %}
-			</ul>
-
-			<a href="{{site.link}}/projects" class="link margin-top--md">Bekijk portfolio</a>
-		</div>
-	{% endif %}
-{% endblock %}
+		<section class="recent-work" id="projects">
+			<div class="container">
+				<div class="section__header">
+					<h2 class="section__title">Recent werk</h2>
+					<p class="section__text">Bekijk hier een samenstelling van mijn meest recente projecten.</p>
+				</div>
+				<div class="section__body">
+					<div class="archive-items grid-column--two">
+						{% for project in projects|slice(0,2) %}
+							{% include "partials/archive-item.twig" %}
+						{% endfor %}
+					</div>
+				</div>
+				<div class="section__footer projects">
+					<a href="{{site.link}}/projects" class="button">Bekijk alle projecten</a>
+				</div>
+			</div>
+		</section>
+		<section class="work-process">
+			<div class="section__header-wrapper">
+				<div class="container">
+					<div class="section__header">
+						<h2 class="section__title">Hoe ga ik te werk?</h2>
+						<p class="section__text">Hieronder volgt de manier waarop ik uw project in handen zal nemen.</p>
+					</div>
+				</div>
+			</div>
+			<div class="container">
+				<div class="work-process__cards">
+					<div class="work-process__card">
+						<img src="{{theme.link}}/assets/img/icons/utility/checklist.svg" alt="Samen om de tafel" class="work-process__image">
+						<h3 class="work-process__title">1. Samen om de tafel</h3>
+						<p class="text text--muted">Het bespreken van de eerste ideeën tijdens een korte vergadering ter plaatse, per e-mail of via Skype. Na de eerste ideeën die we besproken hebben, zal ik u vervolgens een officiële offerte voor het project presenteren.</p>
+					</div>
+					<div class="work-process__card">
+						<img src="{{theme.link}}/assets/img/icons/utility/design.svg" alt="Samen om de tafel" class="work-process__image">
+						<h3 class="work-process__title">2. Schets &amp; design</h3>
+						<p class="text text--muted">Het bespreken van de eerste ideeën tijdens een korte vergadering ter plaatse, per e-mail of via Skype. Na de eerste ideeën die we besproken hebben, zal ik u vervolgens een officiële offerte voor het project presenteren.</p>
+					</div>
+					<div class="work-process__card">
+						<img src="{{theme.link}}/assets/img/icons/utility/feedback.svg" alt="Samen om de tafel" class="work-process__image">
+						<h3 class="work-process__title">3. Feedback sessie</h3>
+						<p class="text text--muted">Het bespreken van de eerste ideeën tijdens een korte vergadering ter plaatse, per e-mail of via Skype. Na de eerste ideeën die we besproken hebben, zal ik u vervolgens een officiële offerte voor het project presenteren.</p>
+					</div>
+					<div class="work-process__card">
+						<img src="{{theme.link}}/assets/img/icons/utility/design2.svg" alt="Samen om de tafel" class="work-process__image">
+						<h3 class="work-process__title">4. Afwerking design &amp; content</h3>
+						<p class="text text--muted">Het bespreken van de eerste ideeën tijdens een korte vergadering ter plaatse, per e-mail of via Skype. Na de eerste ideeën die we besproken hebben, zal ik u vervolgens een officiële offerte voor het project presenteren.</p>
+					</div>
+					<div class="work-process__card">
+						<img src="{{theme.link}}/assets/img/icons/utility/project-finish.svg" alt="Samen om de tafel" class="work-process__image">
+						<h3 class="work-process__title">5. Oplevering</h3>
+						<p class="text text--muted">Het bespreken van de eerste ideeën tijdens een korte vergadering ter plaatse, per e-mail of via Skype. Na de eerste ideeën die we besproken hebben, zal ik u vervolgens een officiële offerte voor het project presenteren.</p>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="tools">
+			<div class="container">
+				<div class="section__header">
+					<h2 class="section__title">En met wat ga ik te werk?</h2>
+					<p class="section__text">De onderstaande applicaties helpen mij met de bouw van uw website!</p>
+				</div>
+				<div class="section__body">
+					<div class="tools-container">
+						<div class="tool">
+							<img src="{{theme.link}}/assets/img/icons/brand/wordpress.svg" alt="Met wat maak ik uw websites?" class="tool__image">
+							<div class="tool__text">WordPress</div>
+						</div>
+						<div class="tool">
+							<img src="{{theme.link}}/assets/img/icons/brand/twig.svg" alt="Met wat maak ik uw websites?" class="tool__image twig">
+							<div class="tool__text">Twig</div>
+						</div>
+						<div class="tool">
+							<img src="{{theme.link}}/assets/img/icons/brand/figma.svg" alt="Met wat maak ik uw websites?" class="tool__image figma">
+							<div class="tool__text">Figma</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="pricing">
+			<div class="container">
+				<div class="section__header">
+					<h2 class="section__title">Prijslijst</h2>
+					<p class="section__text">Welke prijzen hanteer ik, en waarvoor?</p>
+				</div>
+				<div class="section__body">
+					<div class="pricing-container">
+						<div class="pricing-item">
+							<div class="pricing-item__header">
+								<h3 class="pricing__title">Landing Page</h3>
+								<div class="pricing__text">Een goede landingspagina is de hoeksteen van succesvolle online marketing. Ik ontwerp mooie landingspagina's die uw inhoud, dienst of product zo goed mogelijk presenteren.</div>
+							</div>
+							<div class="pricing-item__body">
+								<div class="price">
+									<span class="price__prefix">€</span>1499
+									<span class="price__suffix">,-</span>
+								</div>
+							</div>
+							<div class="pricing-item__footer">
+								<a href="#" class="button pricing__button">Dit wil ik!</a>
+							</div>
+						</div>
+						<div class="pricing-item recommended">
+							<div class="pricing-item__header">
+								<h3 class="pricing__title">Website Pakket</h3>
+								<div class="pricing__text">Verveeld van uw huidige website? Voelt het verouderd aan? Rebranding zou de optie kunnen zijn. Of heeft u plannen voor een hele nieuwe website voor uw nieuwe bedrijf? Ik ben klaar voor de uitdaging!</div>
+							</div>
+							<div class="pricing-item__body">
+								<div class="price">
+									<span class="price__prefix">€</span>3999
+									<span class="price__suffix">,-</span>
+								</div>
+							</div>
+							<div class="pricing-item__footer">
+								<a href="#" class="button pricing__button">Dit wil ik!</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		{% endif %}
+	{% endblock %}

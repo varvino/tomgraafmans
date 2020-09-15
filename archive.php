@@ -16,19 +16,13 @@
  */
 
 
-$templates = array('archive.twig', 'index.twig');
+if (is_tag()) {
+	$templates = array('tag.twig', 'index.twig');
+} else {
+	$templates = array('archive.twig',  'index.twig');
+}
 
 $context = Timber::context();
-
-// Projects
-$project_args = array(
-	'post_type' => 'project',
-	'posts_per_page' => -1,
-	'post_status' => 'publish',
-	'orderby' => 'rand',
-);
-
-$context['projects'] = new Timber\PostQuery($project_args);
 
 $context['title'] = 'Archive';
 if (is_day()) {
@@ -46,6 +40,9 @@ if (is_day()) {
 	$context['title'] = post_type_archive_title('', false);
 	array_unshift($templates, 'archive-' . get_post_type() . '.twig');
 }
+
+//Get a term when on a term archive page
+$context['term_page'] = new Timber\Term();
 
 $context['posts'] = new Timber\PostQuery();
 

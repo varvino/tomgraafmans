@@ -1,3 +1,24 @@
-.logo__image {
-    max-width: 3.125rem;
-}
+  /* ========================================================
+    LOGO
+    ======================================================== */
+
+  .logo {
+      display        : flex;
+      align-items    : center;
+      text-decoration: none;
+      color          : $font-color;
+
+      &:hover {
+          text-decoration: none;
+      }
+  }
+
+  .logo__text {
+      font-size     : 1.5rem;
+      letter-spacing: -0.03rem;
+      margin-bottom : 0;
+  }
+
+  /* ========================================================
+    LOGO //END
+    ======================================================== */

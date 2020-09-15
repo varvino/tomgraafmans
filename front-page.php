@@ -13,16 +13,9 @@
  * @subpackage  Timber
  * @since   Timber 0.1
  */
-$project_args = array(
-    'post_type' => 'project',
-    'posts_per_page' => 3,
-    'post_status' => 'publish',
-    'orderby' => 'rand',
-);
 
 $context          = Timber::context();
 $context['posts'] = new Timber\PostQuery();
-$context['projects'] = new Timber\PostQuery($project_args);
 $templates        = array('front-page.twig');
 
 Timber::render($templates, $context);

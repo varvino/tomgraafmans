@@ -4,64 +4,44 @@ h3,
 h4,
 h5,
 h6 {
-    margin-top   : 0;
-    margin-bottom: $spacing--base;
-    font-family  : $font-family--headings;
-    font-weight  : 600;
+    font-family: $primary-font;
+    font-weight: 700;
+    margin     : 0 0 1rem;
+    line-height: 1.25;
+}
 
-    @include medium {
-        margin-bottom: 1.5rem;
-    }
-
+h1 {
     @include large {
-        margin-bottom: 1.875rem;
+        font-size: 3rem;
     }
 }
 
-a {
-    text-decoration: none;
-    color          : $color--primary;
+h2 {
+    @include large {
+        font-size: 2.25rem;
+    }
+}
 
-    &:hover {
-        text-decoration: underline;
+h3 {
+    @include large {
+        font-size: 1.5rem;
+    }
+}
+
+h4 {
+    @include large {
+        font-size: 1.125rem;
     }
 }
 
 p {
-    margin-top   : 0;
-    margin-bottom: $spacing--base;
-    line-height  : $line-height--two;
-
-    &:last-child {
-        margin-bottom: 0;
-    }
+    margin-top: 0;
 }
 
-.text--small-caps {
-    font-variant: all-small-caps;
-    font-size   : 1.1rem;
+.text {
+    line-height: 2;
 }
 
 .text--muted {
-    color: $font-color--grey;
-}
-
-.title--sm {
-    font-size: 1.25rem;
-}
-
-.title--md {
-    font-size: 1.5rem;
-}
-
-.title--lg {
-    font-size: 2rem;
-}
-
-.title--xl {
-    font-size: 3rem;
-}
-
-.text-align--center {
-    text-align: center;
+    opacity: 0.5;
 }

@@ -1,104 +1,435 @@
+/* ========================================================
+    FRONTPAGE
+    ======================================================== */
+
 .home {
+
+    /* ========================================================
+    HEADER
+    ======================================================== */
     header {
-        padding-bottom: 0;
+        padding      : 0;
+        margin-bottom: $spacing--md;
+
+        @include large {
+            margin-bottom: $spacing--xl;
+        }
     }
 
-    main {
+    /* ========================================================
+    NAVBAR
+    ======================================================== */
+    .navbar {
+        padding: 0;
+        margin : 0 auto;
+        width  : 100%;
+    }
+
+    /* ========================================================
+    NAVBAR //END
+    ======================================================== */
+    /* ========================================================
+    HERO
+    ======================================================== */
+    .hero {
+        background-position: center;
+        background-size    : cover;
+        background-repeat  : no-repeat;
+        height             : calc(var(--vh, 1vh) * 100);
+        background-color   : white;
+    }
+
+    .hero-container {
+        @extend .container;
+        @extend .flex;
+        @extend .flex-column;
+        height         : 100%;
+        justify-content: space-between;
+        padding        : $spacing--sm 0;
+
         @include medium {
-            padding-top: 4.6875rem;
+            padding: $spacing--md 0;
         }
 
         @include large {
-            padding-top: 6.25rem;
+            padding: 4.6875rem 0;
         }
     }
-}
 
-.hero-container {
-    padding-bottom: 1.875rem;
+    .hero__title {
+        font-size: 2.5rem;
 
-    >* {
+        @media screen and (min-width: 3$spacing--md) {
+            font-size: 3.25rem;
+        }
+
         @include medium {
-            max-width: 550px;
+            font-size: 3.5rem;
         }
 
         @include large {
-            max-width: 750px;
+            font-size    : 4rem;
+            margin-bottom: $spacing--md;
+            min-height   : 10rem;
         }
     }
 
-    @include medium {
-        padding-bottom: 4.6875rem;
+    .hero__subtitle {
+        font-weight: 400;
+        opacity    : .75;
+        line-height: 1.75;
+        font-size  : 1.25rem;
     }
 
-    @include large {
-        padding-bottom: 6.25rem;
+    .hero__footer {
+        @extend .grid;
+        grid-template-columns: 1fr 0.5fr;
+        justify-content      : space-between;
     }
+
+    .hero__footer-column {
+        @extend .flex;
+        align-items: center;
+    }
+
+    .hero__scroll-button {
+        @extend .hero__footer-column;
+        color  : inherit;
+        opacity: 0.5;
+
+        svg {
+            margin-right: 0.9375rem;
+        }
+    }
+
+    .hero__social-container {
+        justify-content: flex-end;
+
+        >* {
+            margin-right: 1.25rem;
+
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+
+    /* ========================================================
+    HERO //END
+    ======================================================== */
+
+    /* ========================================================
+    MAIN CONTENT
+    ======================================================== */
+
+    section.recent-work {
+        .section__footer {
+            @extend .flex;
+            justify-content: center;
+            align-items    : center;
+
+            margin-top: $spacing--md;
+
+            @include large {
+                margin-top: $spacing--lg;
+            }
+        }
+    }
+
+    /* ========================================================
+    WORK PROCESS
+    ======================================================== */
+    section.work-process {
+        .section__header-wrapper {
+            background-color: $primary-color;
+            color           : $background-color;
+            padding         : $spacing--md 0;
+            margin-bottom   : $spacing--md;
+
+            @include medium {
+                padding      : $spacing--lg 0;
+                margin-bottom: $spacing--lg;
+            }
+
+            @include large {
+                padding      : $spacing--xl 0;
+                margin-bottom: $spacing--xl;
+            }
+        }
+
+        .section__header {
+            margin-bottom: 0;
+        }
+    }
+
+    .work-process__cards {
+        display              : grid;
+        grid-template-columns: 1fr;
+        gap                  : $spacing--md;
+
+        @include medium {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @include large {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        @include extra-large {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+
+    .work-process__card {
+        padding         : $spacing--md $spacing--sm;
+        background-color: transparentize($color: $primary-color, $amount: .95);
+        border-radius   : 0.625rem;
+        transition      : .35s all ease;
+
+        &:hover {
+            @include large {
+                box-shadow: 10px 10px 15px -1px transparentize($color: $primary-color, $amount: 0.85);
+                transform : translate3d(0px, -20px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(-1deg, 1deg);
+            }
+        }
+
+        >* {
+            margin-bottom: $spacing--sm;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    .work-process__image {
+        display     : flex;
+        margin-left : auto;
+        margin-right: auto;
+        width       : 4.6875rem;
+        filter      : $primary-color-filtered;
+
+    }
+
+    .work-process__title {
+        font-size: 1.625rem;
+    }
+
+    /* ========================================================
+    WORK PROCESS //END
+    ======================================================== */
+    /* ========================================================
+    TOOLS
+    ======================================================== */
+    section.tools {
+        background-color: white;
+        padding         : $spacing--md 0;
+
+        @include medium {
+            padding: $spacing--lg 0;
+        }
+
+        @include large {
+            padding: $spacing--xl 0;
+        }
+    }
+
+    .tools-container {
+        display              : grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap                  : $spacing--sm;
+        align-items          : center;
+
+        @include small {
+            align-items: flex-end;
+        }
+
+        @include medium {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    .tool {
+        display       : flex;
+        flex-direction: column;
+        align-items   : center;
+        opacity       : .75;
+
+        &:last-child {
+            @include small {
+                grid-column: 1 / span 2;
+            }
+        }
+
+        @include small {
+            justify-content: center;
+        }
+
+        @include medium {
+            flex-direction: row;
+        }
+    }
+
+    .tool__image {
+        width  : $spacing--md;
+        filter : $font-color-filtered;
+        opacity: .75;
+
+        &.twig {
+            width: 2.625rem;
+        }
+
+        &.figma {
+            width: 2.1875rem;
+        }
+
+        @include small {
+            margin-bottom: 0.625rem;
+        }
+
+        @include medium {
+            margin-right: 1.25rem;
+        }
+    }
+
+    .tool__text {
+        @extend .text--muted;
+        font-variant: all-small-caps;
+        font-weight : 700;
+        font-size   : 1.25rem;
+
+        @include medium {
+            font-size: 1.5rem;
+        }
+    }
+
+    /* ========================================================
+    TOOLS //END
+    ======================================================== */
+    /* ========================================================
+    PRICING
+    ======================================================== */
+    $pricing-border : 0.0625rem solid rgba(51, 51, 51, 0.15);
+    $pricing-padding: $spacing--md 0;
+
+    .pricing-container {
+        display              : grid;
+        grid-template-columns: 1fr;
+        gap                  : $spacing--md;
+        align-items          : center;
+
+        @include medium {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @include large {
+            gap: $spacing--lg;
+        }
+    }
+
+    .pricing-item {
+        border: $pricing-border;
+        height: 100%;
+    }
+
+    .pricing-item.recommended {
+        border-width  : 0.1875rem;
+        border-color  : $primary-color;
+        position      : relative;
+        display       : flex;
+        flex-direction: column;
+
+        &:before {
+            content         : "Aanbevolen";
+            background-color: $primary-color;
+            color           : $background-color;
+            padding         : 0.9375rem 0;
+            font-variant    : all-small-caps;
+            font-weight     : 700;
+            font-size       : 1.375rem;
+            letter-spacing  : 0.1rem;
+            line-height     : 1;
+            position        : absolute;
+            top             : -$spacing--sm;
+            left            : 0;
+            right           : 0;
+            width           : 60%;
+            margin          : 0 auto;
+            display         : inline-flex;
+            justify-content : center;
+            align-items     : center;
+            text-align      : center;
+        }
+    }
+
+    .pricing-item__header {
+        padding: $spacing--md $spacing--sm;
+    }
+
+    .pricing__title {
+        text-align   : center;
+        font-size    : $spacing--sm;
+        margin-bottom: $spacing--sm;
+    }
+
+    .pricing-item__body {
+        border-top   : $pricing-border;
+        border-bottom: $pricing-border;
+        padding      : $spacing--sm 0 $spacing--sm 0;
+    }
+
+    .pricing__text {
+        @extend .text;
+        @extend .text--muted;
+    }
+
+    .price {
+        display        : flex;
+        align-items    : flex-end;
+        justify-content: center;
+        color          : $primary-color;
+        font-size      : 2.25rem;
+        line-height    : 1;
+        font-weight    : 700;
+
+        &:before {
+            display     : block;
+            margin-right: 0.625rem;
+            content     : "v.a.";
+            color       : transparentize($color: $font-color, $amount: 0.5);
+            font-weight : 400;
+            font-size   : 1rem;
+        }
+    }
+
+    .pricing-item__footer {
+        display        : flex;
+        justify-content: center;
+        padding        : $spacing--md 0 $spacing--md 0;
+    }
+
+    /* ========================================================
+    PRICING //END
+    ======================================================== */
+    /* ========================================================
+    MAIN CONTENT //END
+    ======================================================== */
+    /* ================================f========================
+    MISC
+    ======================================================== */
+    .section__header {
+        margin-bottom: $spacing--md;
+    }
+
+    .section__title {
+        margin-bottom: $spacing--sm;
+    }
+
+    /* ========================================================
+    MISC //END
+    ======================================================== */
 }
 
-.hero__title {
-    font-size    : 3rem;
-    margin-bottom: 0;
-
-    @include medium {
-        font-size: 3.5rem;
-    }
-
-    @include large {
-        font-size: 4.25rem;
-    }
-}
-
-.hero__subtitle {
-    font-weight: 400;
-    font-size  : 2.25rem;
-    color      : $color--primary;
-
-    @include medium {
-        font-size: 2.75rem;
-    }
-
-    @include large {
-        font-size: 3.25rem;
-    }
-}
-
-.overview-container {
-    padding         : 1.875rem 0;
-    background-color: transparentize($color: $color--primary, $amount: 0.95);
-
-    @include medium {
-        padding: 4.6875rem 0;
-    }
-
-    @include large {
-        padding: 6.25rem 0;
-    }
-}
-
-.overview__text {
-    font-family  : $font-family--headings;
-    font-weight  : 500;
-    font-size    : 1.5rem;
-    margin-bottom: 1.875rem;
-}
-
-.overview__inner-container {
-    margin-bottom: 1.875rem;
-
-    &:last-child {
-        margin-bottom: 0;
-    }
-}
-
-.recent-projects-container {
-    padding-top: 1.875rem;
-
-    @include medium {
-        padding-top: 4.6875rem;
-    }
-
-    @include large {
-        padding-top: 6.25rem;
-    }
-}
+/* ========================================================
+    FRONTPAGE //END
+    ======================================================== */

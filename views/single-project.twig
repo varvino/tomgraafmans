@@ -1,37 +1,39 @@
 {% extends "base.twig" %}
 
 {% block content %}
-	{% if posts is not empty %}
-		{% for post in posts %}
-			<article class="post">
-				<h1 class="post__title">{{post.title}}</h2>
-				<div class="post__content">{{post.content}}</div>
-			</article>
-		{% endfor %}
-	{% endif %}
 
-	{% if post.meta('project_item_gallery') is not empty %}
-		{% for item in post.meta('project_item_gallery') %}
-			<div class="owl-carousel owl-theme margin--lg">
-				<img src="{{Image(item.image).src}}" {% if Image(item.image).alt %} alt="{{Image(item.image).alt}}" {% endif %} class="carousel__item">
+	<section class="project">
+		{% if posts is not empty %}
+			<div class="section-header grid grid-column--two gap--md">
+				<div class="section-description">
+					<h1 class="section__title">{{post.title}}</h1>
+					<div class="section__text">{{post.content}}</div>
+				</div>
+				<div class="services-container">
+					<h2>Services</h2>
+					<div class="services">
+						{% for tag in post.tags() %}
+							<a href="{{tag.link}}" class="service">{{tag.name}}</a>
+						{% endfor %}
+					</div>
+				</div>
 			</div>
-		{% endfor %}
-	{% else %}
-		<div class="margin-bottom--md"></div>
-	{% endif %}
+			{% if post.meta('url') %}
+				<a href="{{post.meta('url')}}" target="_blank" class="button project-url-button">Bekijk website</a>
+			{% endif %}
+		{% endif %}
+	</section>
 
-	{% if projects is not empty %}
-		<h3 class="title--sm">Meer projecten</h3>
-		<ul class="archive-items">
-			{% for project in projects %}
-				<li class="archive-item archive-item--{{project.post_type}}">
-					<a href="{{project.link}}" class="archive-item__link">
-						<img src="{{project.thumbnail.src}}" alt="{{project.thumbnail.alt}}" class="archive-item__image">
-					</a>
-				</li>
-			{% endfor %}
-		</ul>
-		<a href="{{site.link}}/projects" class="link margin-top--md">Bekijk portfolio</a>
-	{% endif %}
+	<section class="more-projects">
+		{% if projects is not empty %}
+			<hr class="no-margin divider full-width">
+			<h2 class="title--sm">Meer projecten</h2>
+			<div class="archive-items grid grid-column--two">
+				{% for project in projects|slice(0,2) %}
+					{% include "partials/archive-item.twig" %}
+				{% endfor %}
+			</div>
+		{% endif %}
+	</section>
 
 {% endblock %}

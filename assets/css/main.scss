@@ -12,8 +12,8 @@
 @import 'base/reset';
 
 // Components
+@import 'components/archive-item';
 @import 'components/buttons';
-@import 'components/carousel';
 @import 'components/logo';
 @import 'components/inputs';
 @import 'components/navigation';
@@ -25,10 +25,7 @@
 
 // Pages
 @import 'pages/archive';
+@import 'pages/archive-project';
 @import 'pages/frontpage';
-@import 'pages/page';
-@import 'pages/post';
-
-// Vendor
-@import 'vendor/carousel';
-@import 'vendor/carousel-theme';
+@import 'pages/single';
+@import 'pages/single-project';

@@ -84,19 +84,11 @@ class StarterSite extends Timber\Site
 			'orderby' => 'rand',
 		);
 
-		// Header Menu
-		$header_menu_args = array([
-			'theme_location' => 'header-menu'
-		]);
+		$context['header_menu'] = new Timber\Menu('header-menu');
+		$context['footer_menu'] = new Timber\Menu('footer-menu');
+		$context['social_menu'] = new Timber\Menu('social-menu');
 
-		// Footer Menu
-		$footer_menu_args = array([
-			'theme_location' => 'footer-menu'
-		]);
-		
 		$context['projects'] = new Timber\PostQuery($project_args);
-		$context['header_menu']  = new Timber\Menu('header-menu', $header_menu_args);
-		$context['footer_menu']  = new Timber\Menu('footer-menu', $footer_menu_args);
 
 		$context['site']  = $this;
 
@@ -177,7 +169,6 @@ new StarterSite();
 function portfolio_styles()
 {
 	wp_enqueue_style('dashicons');
-	wp_enqueue_style('google_fonts', 'https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&display=swap', array(), null);
 	wp_enqueue_style('portfolio_styles', get_theme_file_uri() . '/assets/css/main.min.css', microtime());
 }
 
@@ -186,24 +177,6 @@ add_action('wp_enqueue_scripts', 'portfolio_styles');
 function portfolio_scripts()
 {
 	wp_enqueue_script('jquery');
-	wp_enqueue_script('portfolio_vendor_scripts', get_theme_file_uri() . '/assets/js/vendor.min.js', array('jquery'), microtime(), true);
-	wp_enqueue_script('portfolio_custom_scripts', get_theme_file_uri() . '/assets/js/custom.min.js', null, microtime(), true);
 }
 
 add_action('wp_enqueue_scripts', 'portfolio_scripts');
-
-function portfolio_inits()
-{
-	echo '<script>
-	jQuery(function($){
-		$(".owl-carousel").owlCarousel({
-			loop: true,
-			margin: 10,
-			nav: true,
-			responsive: { 0: {items: 1}}
-			});
-	});
-	</script>';
-}
-
-add_action('wp_footer', 'portfolio_inits', 999);

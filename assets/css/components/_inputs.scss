@@ -1,32 +1,55 @@
 input,
 textarea {
-    width           : 100%;
-    max-width       : 100%;
-    border          : 0;
-    background-color: transparentize($color: $color--primary, $amount: 0.9);
-    padding         : 0.9375rem;
-    border-radius   : 0.3125rem;
-    font-size       : 100%;
-    font-family     : $font-family--base;
+    width      : 100%;
+    font-family: inherit;
+    font-size  : inherit;
+    padding    : 0.625rem;
+    border     : 1px solid #ccc;
+}
+
+input[type="submit"] {
+    @extend .button;
+    padding: 0.8125rem;
 }
 
 textarea {
-    min-height: 18.75rem;
+    min-height: 12.5rem;
 }
 
-.wpcf7 form.invalid .wpcf7-response-output,
-.wpcf7 form.unaccepted .wpcf7-response-output {
-    border       : 0.0625rem solid;
-    border-color : $color--primary !important;
-    border-radius: 0.3125rem;
-    padding      : 0.9375rem;
-    margin       : 0;
+.wpcf7-form {
+    position: relative;
+
+    p {
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+    }
+
+    >* {
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
 }
 
-.wpcf7-submit {
-    text-align      : center;
-    background-color: $color--primary;
-    color           : white;
-    padding         : 0.9375rem 1.875rem;
-    width           : initial;
+div.wpcf7 {
+    .ajax-loader {
+        position: absolute;
+        bottom  : -$spacing--sm;
+        left    : 0;
+        right   : 0;
+        margin  : 0 auto;
+    }
+}
+
+.contact-form {
+    textarea {
+        max-width: 100%;
+        min-width: 100%;
+    }
+
+    @include large {
+        max-width: 800px;
+        margin   : 0 auto;
+    }
 }

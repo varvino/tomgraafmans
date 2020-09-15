@@ -1,0 +1,25 @@
+<div class="archive-item archive-item--{{project.post_type}}">
+	{% if project.thumbnail %}
+		<a href="{{project.link}}" class="archive-item__link">
+			<img src="{{project.thumbnail.src}}" alt="{{project.thumbnail.alt}}" class="archive-item__image">
+		</a>
+	{% else %}
+		<a href="{{project.link}}" class="archive-item__link">
+			<img src="http://placehold.jp/450x450.png" alt="{{project.title}}" class="archive-item__image">
+		</a>
+	{% endif %}
+	<div class="archive-item__content">
+		<div class="archive-item__text">
+			<a href="{{project.link}}" class="archive-item__link">
+				<h2 class="archive-item__title">{{project.title}}</h2>
+			</a>
+			<div class="archive-item__tags">
+				{% for tag in project.tags() %}
+					<a href="{{tag.link}}" class="archive-item__tag">{{tag.name}}</a>
+				{% endfor %}
+			</div>
+			<p class="text text--muted">{{project.preview.length(15).read_more('')}}</p>
+		</div>
+		<a href="{{project.link}}" class="link">Bekijk project</a>
+	</div>
+</div>

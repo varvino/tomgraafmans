@@ -1,36 +1,74 @@
-{% if fn('is_page', 'contact') %}
-	<hr class="margin-bottom--lg">
-{% else %}
-	<div class="cta-container margin-bottom--md">
-		<div class="container flex flex-direction--column align-items--center">
-			<h2 class="cta__text">Heeft mijn portfolio uw interesse gewekt?</h2>
-			<a href="{{site.link}}/contact" class="button button--cta">Neem contact op</a>
-		</div>
+{% if fn('is_page', 'contact') != 'contact' %}
+	<div class="cta-container">
+		<h2 class="cta-container__title">Heeft mijn portfolio uw interesse gewekt?</h2>
+		<p class="text">Ik ben momenteel op zoek naar een nieuwe uitdaging in omgeving Alphen aan den Rijn/Leiden.</p>
+		<a href="{{site.link}}/contact" class="button button-border--white">Neem contact op</a>
 	</div>
+	<hr class="hr--inverse divider divider--md">
 {% endif %}
 
-<div class="social-container margin-bottom--md">
-	<div class="container">
-		<div class="social__icons">
-			<a href="https://www.linkedin.com/in/tomgraafmans/" class="social__icon" target="_blank">
-				<svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-4 0v7h-4v-7a6 6 0 016-6v0zM6 9H2v12h4V9zM4 6a2 2 0 100-4 2 2 0 000 4z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-			</a>
-			<a href="https://www.github.com/varvino" class="social__icon" target="_blank">
-				<svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16 22v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22m0-3c-5 1.5-5-2.5-7-3l7 3z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-			</a>
-			<a href="{{site.link}}/contact-details" class="social__icon">
-				<svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 2v6h6m-4 5H8m8 4H8m2-8H8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-			</a>
+<div class="footer-container">
+	<div class="site-information">
+		{% include "partials/logo.twig" %}
+		<div class="copyright">Copyright
+			{{"now"|date('Y')}}</div>
+	</div>
+	<div class="links-container">
+		<div class="footer-item">
+			<div class="footer-item__title">Contactgegevens</div>
+			<div class="contact-links">
+				<div>
+					<a href="mailto:info@tomgraafmans.com">info@tomgraafmans.com</a>
+				</div>
+				<div>
+					<a href="callto:+31622785388">+31(6) 22 78 53 88</a>
+				</div>
+			</div>
+		</div>
+		<div class="footer-item">
+			<div class="footer-item__title">Site Links</div>
+			{% for item in footer_menu.items %}
+				<a class="footer-item__link{{ item.classes|join(' ') }}" href="{{ item.link }}">
+					{{ item.title }}
+				</a>
+			{% endfor %}
+		</div>
+		<div class="footer-item">
+			<div class="footer-item__title">Social Links</div>
+			{% for item in social_menu.items %}
+				<a class="footer-item__link{{ item.classes|join(' ') }}" href="{{ item.link }}" target="_blank">
+					{{ item.title }}
+				</a>
+			{% endfor %}
 		</div>
 	</div>
 </div>
 
-<div class="container margin-bottom--md">
-	<div class="text-align--center text--muted">
-		Copyright
-		{{"now"|date('Y')}}
-		&mdash; Tom Graafmans
-	</div>
-</div>
+{# Theme Scripts #}
+<script src="{{theme.link}}/assets/js/custom.min.js"></script>
+<script src="{{theme.link}}/assets/js/vendor.min.js"></script>
+{# Typed Scripts #}
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+{# Typed Options #}
+<script>
+	var typed = new Typed('.hero__content span', {
+strings: [
+'die opvallen', 'die converteren', 'die groei stimuleren', 'waar klanten van houden'
+],
+loop: true,
+stringsElement: null,
+typeSpeed: 80,
+startDelay: 500,
+backSpeed: 50,
+backDelay: 1000
+});
+</script>
+
+{# AOS #}
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+{# Initalize AOS #}
+<script>
+	AOS.init({once: true});
+</script>
 
 {{ function('wp_footer') }}

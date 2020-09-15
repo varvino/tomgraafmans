@@ -6,18 +6,14 @@
 
 	<header>
 		{% block header %}
-			<div class="container">
-				<div class="navbar navbar-expand-md">
-					{% include "partials/logo.twig" %}
-					{% include "partials/navigation.twig" %}
-				</div>
-			</div>
+			{% include 'layout/header.twig' %}
 		{% endblock %}
+		{% if not fn('is_front_page') %}
+			<hr class="no-margin">
+			{{custom_breadcrumbs()}}
+			<hr class="no-margin">
+		{% endif %}
 	</header>
-
-	{% if not fn('is_front_page') %}
-		<div class="container">{{custom_breadcrumbs()}}</div>
-	{% endif %}
 
 	<main {% if not fn('is_front_page') %} class="container" {% endif %}>
 		{% block content %}

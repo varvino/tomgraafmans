@@ -1,276 +1,223 @@
-/* ##############################################
-    Layout
-################################################*/
-/* ##############################################
-    Container Classes
-################################################*/
+/* ========================================================
+    LAYOUT
+    ======================================================== */
 .container {
     width : 90%;
     margin: 0 auto;
-    flex  : 1 0 auto;
 
     @include medium {
         width: 80%;
     }
 
-    @include medium-large {
-        width    : 70%;
-        max-width: 800px;
-    }
-
     @include large {
-        width    : 60%;
-        max-width: 1000px;
+        width    : 70%;
+        max-width: 1300px;
     }
 }
 
-main {
-    padding-top   : 1.25rem;
-    padding-bottom: 1.875rem;
+/* ========================================================
+    GRID
+    ======================================================== */
+.grid {
+    display: grid;
+}
+
+.grid-column--two {
+    grid-template-columns: 1fr;
 
     @include medium {
-        padding: 3.125rem 0 4.6875rem;
-    }
-
-    @include large {
-        padding: 4.6875rem 0 7.8125rem;
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
-/* ##############################################
-    Margin Helpers
-################################################*/
-/* ##############################################
-    Margin Top
-################################################*/
-.margin--none {
-    margin: 0;
-}
+.grid-column--three {
+    grid-template-columns: 1fr;
 
-.margin--sm {
-    margin: 0.9375rem 0;
-}
-
-.margin--md {
-    margin: 1.875rem 0;
-}
-
-.margin--lg {
-    margin: 3.125rem 0;
-}
-
-.margin--xl {
-    margin: 6.25rem 0;
-}
-
-/* ##############################################
-    Margin Top
-################################################*/
-.margin-top--none {
-    margin-top: 0;
-}
-
-.margin-top--sm {
-    margin-top: 0.9375rem;
-}
-
-.margin-top--md {
-    margin-top: 1.875rem;
-}
-
-.margin-top--lg {
-    margin-top: 3.125rem;
-}
-
-.margin-top--xl {
-    margin-top: 6.25rem;
-}
-
-/* ##############################################
-    Margin Bottom
-################################################*/
-.margin-bottom--none {
-    margin-bottom: 0;
-}
-
-.margin-bottom--sm {
-    margin-bottom: 0.9375rem;
-}
-
-.margin-bottom--md {
-    margin-bottom: 1.875rem;
-}
-
-.margin-bottom--lg {
-    margin-bottom: 3.125rem;
-}
-
-.margin-bottom--xl {
-    margin-bottom: 6.25rem;
-}
-
-/* ##############################################
-    Padding Helpers
-################################################*/
-/* ##############################################
-    No Padding
-################################################*/
-.padding--none {
-    padding: none;
-}
-
-/* ##############################################
-    Padding
-################################################*/
-.padding--sm {
-    padding: $spacing--base;
-
-    @include large {
-        padding: $spacing--two;
+    @include medium {
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 
-.padding--md {
-    padding: $spacing--two;
-
-    @include large {
-        padding: $spacing--three;
-    }
+/* ========================================================
+    GRID GAPS
+    ======================================================== */
+.gap--sm {
+    gap: $spacing--sm;
 }
 
-.padding--lg {
-    padding: $spacing--three;
-
-    @include large {
-        padding: $spacing--four;
-    }
+.gap--md {
+    gap: $spacing--md;
 }
 
-/* ##############################################
-    Flex Classes
-################################################*/
+.gap--lg {
+    gap: $spacing--lg;
+}
+
+.gap--xl {
+    gap: $spacing--xl;
+}
+
+/* ========================================================
+    GRID GAPS //END
+    ======================================================== */
+/* ========================================================
+    GRID ORDER
+    ======================================================== */
+.grid-row-first {
+    grid-row: 1;
+}
+
+.grid-col-first {
+    grid-column: 1;
+}
+
+/* ========================================================
+    GRID ORDER //END
+    ======================================================== */
+/* ========================================================
+    GRID //END
+    ======================================================== */
+/* ========================================================
+    FLEX
+    ======================================================== */
 .flex {
     display: flex;
 }
 
-.inline-flex {
-    display: inline-flex;
-}
-
-/* ##############################################
-    Flex Direction
-################################################*/
-.flex-direction--row {
-    flex-direction: row;
-}
-
-.flex-direction--row-reverse {
-    flex-direction: row-reverse;
-}
-
-.flex-direction--column {
+.flex-column {
     flex-direction: column;
 }
 
-.flex-direction--column-reverse {
-    flex-direction: column-reverse;
+.flex-row {
+    flex-direction: row;
 }
 
-/* ##############################################
-    Align Self
-################################################*/
-.align-self--start {
-    align-self: flex-start;
+/* ========================================================
+    FLEX //END
+    ======================================================== */
+/* ========================================================
+    MISC
+    ======================================================== */
+.no-margin {
+    margin: 0;
 }
 
-.align-self--end {
-    align-self: flex-end;
-}
-
-.align-self--center {
-    align-self: center;
-}
-
-/* ##############################################
-    Align Items
-################################################*/
-.align-items--start {
-    align-items: flex-start;
-}
-
-.align-items--end {
-    align-items: flex-end;
-}
-
-.align-items--center {
-    align-items: center;
-}
-
-/* ##############################################
-    Justify Self
-################################################*/
-.justify-self--start {
-    justify-self: flex-start;
-}
-
-.justify-self--end {
-    justify-self: flex-end;
-}
-
-.justify-self--center {
-    justify-self: center;
-    margin      : 0 auto;
-}
-
-/* ##############################################
-    Justify Content
-################################################*/
-.justify-content--start {
-    justify-content: flex-start;
-}
-
-.justify-content--end {
-    justify-content: flex-end;
-}
-
-.justify-content--center {
-    justify-content: center;
-    margin         : 0 auto;
-}
-
-.justify-content--space-evenly {
-    justify-content: space-evenly;
-}
-
-.justify-content--space-around {
-    justify-content: space-around;
-}
-
-.justify-content--space-between {
-    justify-content: space-between;
-}
-
-// Hidden
-.hidden--sm {
+.hidden-sm {
     @include small {
         display: none;
     }
 }
 
-.hidden--md {
+.hidden-md {
     @include medium {
         display: none;
     }
 }
 
-.hidden--lg {
+.hidden-lg {
     @include large {
         display: none;
     }
 }
 
-.hidden--xl {
+.hidden-xl {
     @include extra-large {
         display: none;
     }
 }
+
+.divider {
+    margin: $spacing--md 0;
+
+    @include medium {
+        margin-top   : $spacing--lg;
+        margin-bottom: $spacing--lg;
+    }
+
+    @include large {
+        margin-top   : $spacing--xl;
+        margin-bottom: $spacing--xl;
+    }
+}
+
+.full-width {
+    width       : 100vw;
+    position    : relative;
+    left        : 50%;
+    right       : 50%;
+    margin-left : -50vw;
+    margin-right: -50vw;
+}
+
+/* ========================================================
+    MISC //END
+    ======================================================== */
+
+.four-o-four-container {
+    @extend .flex;
+    @extend .flex-column;
+    align-items    : center;
+    justify-content: center;
+    min-height     : 50vh;
+
+    h1 {
+        font-size: $spacing--md;
+    }
+
+    p {
+        @extend .text--muted;
+        margin-bottom: $spacing--md;
+    }
+}
+
+/*  ========================================================
+    MAIN CONTENT
+    ======================================================== */
+main {
+    margin-bottom: $spacing--md !important;
+}
+
+section {
+    margin-bottom: $spacing--md;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    @include medium {
+        margin-bottom: $spacing--lg;
+    }
+
+    @include large {
+        margin-bottom: $spacing--xl;
+    }
+}
+
+.section__header {
+    margin-bottom: $spacing--sm;
+
+    @include medium {
+        margin-bottom: $spacing--md;
+    }
+}
+
+.section__title {
+    margin-bottom: $spacing--sm - 1.25rem;
+
+    @include large {
+        font-size: 3rem;
+    }
+}
+
+.section__text {
+    @extend .text--muted;
+    @extend .text;
+    margin-bottom: 0;
+}
+
+/* ========================================================
+    MAIN CONTENT //END
+    ======================================================== */
+/* ========================================================
+    LAYOUT //END
+    ======================================================== */

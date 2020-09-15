@@ -1,26 +1,25 @@
 .breadcrumbs {
-    list-style: none;
-    display   : flex;
-    flex-wrap : wrap;
-    margin    : 0;
-    padding   : 0;
-    color     : transparentize($color: #202020, $amount: 0.6);
+    @extend .container;
+    @extend .flex;
+    align-items: center;
+    overflow   : scroll;
+
+    padding: 1rem 0;
+    color  : transparentize($color: black, $amount: 0.5);
 
     a {
         color: inherit;
     }
 
-    li {
-        display    : flex;
-        align-items: center;
-        margin     : 0 0.625rem 0 0;
+    @include medium {
+        overflow: auto;
     }
+}
 
-    .dashicons {
-        margin-right: 0;
-    }
+[class*="breadcrumb--"] {
+    white-space: nowrap;
+}
 
-    .separator__image {
-        transform: scale(.85);
-    }
+.separator {
+    margin: 0 0.625rem 0 0.625rem;
 }

@@ -1,0 +1,3 @@
+{% for tag in project.tags() %}
+	<a href="{{tag.link}}" class="archive-item__tag">{{tag.name}}</a>
+{% endfor %}

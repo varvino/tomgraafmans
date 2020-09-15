@@ -1,25 +1,7 @@
-<div class="hamburger js-hamburger">
-	<img class="hamburger__icon" src="{{theme.link}}/assets/img/icons/utility/hamburger.svg" alt="{{site.name}} - {{site.description}}">
-</div>
-
-<nav class="navmenu js-navmenu">
-
-	{% for item in header_menu.items %}
-		<a class="navmenu__link" href="{{ item.link }}">
-			<div class="navmenu__item {{ item.classes|join(' ') }}">
-				{{ item.title }}
-			</div>
-		</a>
-	{% endfor %}
-
-	{% for item in footer_menu.items %}
-		<div class="navmenu-bottom hidden--md">
-			<a class="navmenu__link" href="{{ item.link }}">
-				<div class="navmenu__item {{ item.classes|join(' ') }}">
-					{{ item.title }}
-				</div>
-			</a>
-		</div>
-	{% endfor %}
-
-</nav>
+{% for item in header_menu.items %}
+	{% if loop.last %}
+		<a class="nav-item button button--rounded-full{{ item.classes|join(' ') }}" href="{{ item.link }}">{{ item.title }}</a>
+	{% else %}
+		<a class="nav-item{{ item.classes|join(' ') }}" href="{{ item.link }}">{{ item.title }}</a>
+	{% endif %}
+{% endfor %}

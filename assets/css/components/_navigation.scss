@@ -1,74 +1,21 @@
 .navbar {
+    @extend .container;
     display        : flex;
     justify-content: space-between;
-    align-items    : center;
-}
-
-.navmenu-bottom {
-    margin-top: auto;
+    padding        : 1rem 0;
 
     @include medium {
-        display: none;
-    }
-}
-
-.navmenu {
-    display: none;
-
-    @include medium {
-        display: inline-flex;
-    }
-}
-
-.js-navmenu--toggled {
-    display         : flex;
-    flex-direction  : column;
-    z-index         : 999;
-    position        : fixed;
-    top             : 0;
-    bottom          : 0;
-    left            : 0;
-    background-color: white;
-    padding         : 1.875rem;
-}
-
-.backdrop {
-    z-index         : 998;
-    position        : fixed;
-    top             : 0;
-    left            : 0;
-    right           : 0;
-    bottom          : 0;
-    background-color: transparentize($color: darken($color: $color--primary, $amount: 15), $amount: 0.75);
-}
-
-.navigation {
-    margin : 0;
-    padding: 0;
-}
-
-.navmenu__link {
-    list-style: none;
-    padding   : 0;
-    margin    : 0 0 1rem;
-    width     : 100%;
-
-    &:last-child {
-        margin-bottom: 0;
-    }
-
-    @include medium {
-        margin: 0 1.875rem 0 0;
-
-        &:last-child {
-            margin-right: 0;
-        }
+        padding: 1.5625rem 0;
     }
 }
 
 .hamburger {
-    z-index : 1000;
-    position: relative;
+    &:after {
+        content    : "\f333";
+        font-family: "Dashicons";
+        font-size  : $spacing--sm;
+        color      : $font-color;
+    }
 
     @include medium {
         display: none;
@@ -76,5 +23,91 @@
 }
 
 .hamburger--white {
-    filter: invert(100%) sepia(1%) saturate(130%) hue-rotate(244deg) brightness(114%) contrast(100%);
+    @extend .hamburger;
+
+    &:after {
+        color: white;
+    }
+}
+
+.navmenu-overlay {
+    @extend .flex;
+    @extend .flex-column;
+    height          : 100%;
+    width           : 100%;
+    position        : fixed;
+    z-index         : 5;
+    left            : -100vw;
+    top             : 0;
+    background-color: #fefefe;
+    color           : $font-color;
+    overflow-x      : hidden;
+    transition      : 0.5s;
+
+    @include medium {
+        position        : inherit;
+        background-color: transparent;
+        color           : white;
+        height          : auto;
+        width           : auto;
+        overflow        : auto;
+    }
+
+    a {
+        color  : $font-color;
+        display: block;
+    }
+
+    .button--close {
+        position: absolute;
+        top     : $spacing--sm;
+        right   : $spacing--sm;
+
+        &:after {
+            content    : "\f14a";
+            font-family: "Dashicons";
+            font-size  : $spacing--sm;
+        }
+
+        @include medium {
+            display: none;
+        }
+    }
+}
+
+.navmenu {
+    text-align: center;
+    width     : 90%;
+    margin    : auto;
+
+    @include medium {
+        width      : auto;
+        display    : flex;
+        align-items: center;
+    }
+}
+
+.nav-item {
+    margin-bottom: $spacing--sm;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    &[class*="button-"] {
+        color: white;
+
+        &:hover {
+            color: $primary-color;
+        }
+    }
+
+    @include medium {
+        margin-bottom: 0;
+        margin-right : $spacing--sm;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
 }
