@@ -2,11 +2,8 @@
 
 {% block content %}
 	{% for post in posts %}
-		<div class="post" data-aos="fade-up" data-aos-offset="300" data-aos-duration="1000">
-			<div class="contact-form">
-				<h1>{{post.title}}</h1>
-				<p class="text">Heeft mijn portfolio uw interesse gewekt? Neem contact met mij op!</p>
-				<div class="post__content">{{post.content}}</div>
+					<h1 class="section__title">{{post.title}}</h1>
+					<p class="section__text">{{cta_text}}</p>
 			</div>
 		</div>
 	{% endfor %}
