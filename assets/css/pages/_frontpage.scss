@@ -297,12 +297,6 @@
         align-items   : center;
         opacity       : .75;
 
-        &:last-child {
-            @include small {
-                grid-column: 1 / span 2;
-            }
-        }
-
         @include small {
             justify-content: center;
         }
@@ -318,7 +312,7 @@
         }
 
         &.acf {
-            width: 90px;
+            width: 5.625rem;
         }
 
         &.figma {
