@@ -285,6 +285,10 @@
         @include medium {
             grid-template-columns: repeat(3, 1fr);
         }
+
+        @include large {
+            grid-template-columns: repeat(4, 1fr);
+        }
     }
 
     .tool {
@@ -302,10 +306,6 @@
         @include small {
             justify-content: center;
         }
-
-        @include medium {
-            flex-direction: row;
-        }
     }
 
     .tool__image {
@@ -313,8 +313,12 @@
         filter    : $font-color-filtered;
         transition: .25s all ease;
 
-        &.twig {
+        &.timber {
             width: 2.625rem;
+        }
+
+        &.acf {
+            width: 90px;
         }
 
         &.figma {
@@ -332,7 +336,7 @@
         }
 
         @include medium {
-            margin-right: 1.25rem;
+            margin-bottom: 1.25rem;
         }
     }
 
@@ -341,6 +345,7 @@
         font-variant: all-small-caps;
         font-weight : 700;
         font-size   : 1.25rem;
+        line-height : 1;
 
         @include medium {
             font-size: 1.5rem;
