@@ -166,6 +166,7 @@ div.wpcf7 .ajax-loader{position:absolute;bottom:-1.875rem;left:0;right:0;margin:
 .services__title{margin-bottom:1.875rem}
 .project-gallery{gap:3.125rem}
 .project-gallery__image{width:100%;height:400px;-o-object-fit:cover;object-fit:cover}
+.more-projects__title{margin-bottom:1.875rem}
 @media screen and (min-width:3 3.125rem){.home .hero__title{font-size:3.25rem}
 }@media(min-width:25rem){.cta-container{text-align:center}
 }@media(min-width:700px){.container,.navbar,.breadcrumbs,.cta-container,.footer-container,.home .hero-container{width:80%}
@@ -210,6 +211,7 @@ section.contact-form{gap:3.125rem;grid-template-columns:1fr}
 .project__header{gap:3.125rem}
 .project-gallery{gap:6.25rem}
 .project-gallery__image{height:600px}
+.more-projects__title{font-size:2.5rem}
 }@media(min-width:1200px){h1{font-size:3rem}
 h2{font-size:2.25rem}
 .container,.navbar,.breadcrumbs,.cta-container,.footer-container,.home .hero-container{width:70%;max-width:1300px}
@@ -241,6 +243,7 @@ section.contact-form{gap:6.25rem;grid-template-columns:1fr 1fr}
 .home .pricing-container{gap:6.25rem}
 .project__header{gap:6.25rem}
 .project-gallery__image{height:800px}
+.more-projects__title{font-size:2.75rem;margin-bottom:3.125rem}
 }@media(min-width:1800px){.hidden-xl{display:none}
 section.contact-form{gap:9.375rem}
 }@media(max-width:699px){.hidden-sm{display:none}

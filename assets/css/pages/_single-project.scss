@@ -62,3 +62,16 @@
         height: 800px;
     }
 }
+
+.more-projects__title {
+    margin-bottom: $spacing--sm;
+
+    @include medium {
+        font-size: 2.5rem;
+    }
+
+    @include large {
+        font-size    : 2.75rem;
+        margin-bottom: $spacing--md;
+    }
+}
