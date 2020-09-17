@@ -169,7 +169,7 @@ new StarterSite();
 function portfolio_styles()
 {
 	wp_enqueue_style('dashicons');
-	wp_enqueue_style('portfolio_styles', get_theme_file_uri() . '/assets/css/main.min.css', microtime());
+	wp_enqueue_style('portfolio_styles', get_theme_file_uri() . '/assets/css/main.min.css', array());
 }
 
 add_action('wp_enqueue_scripts', 'portfolio_styles');
