@@ -3,7 +3,7 @@
 		{% for post in posts %}
 			<div class="hero">
 				<div class="hero-container">
-					<div class="navbar" data-aos="fade-up" data-aos-duration="1000">
+					<div class="navbar">
 						{% include "partials/logo.twig" %}
 						<div class="hamburger" onclick="openNav()"></div>
 						<div class="navmenu-overlay">
@@ -13,7 +13,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="hero__content" data-aos="fade-up" data-aos-duration="1000">
+					<div class="hero__content">
 						<div class="hero__text">
 							<h1 class="hero__title">Ik maak websites<br><span></span></h1>
 							<h3 class="hero__subtitle">{{post.content}}</h3>
@@ -49,7 +49,7 @@
 			</div>
 		{% endfor %}
 	{% else %}
-		<div class="navbar" data-aos="fade-up" data-aos-duration="1000">
+		<div class="navbar">
 			{% include "partials/logo.twig" %}
 			<div class="hamburger" onclick="openNav()"></div>
 			<div class="navmenu-overlay">
