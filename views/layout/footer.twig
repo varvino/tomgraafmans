@@ -1,10 +1,13 @@
 {% if fn('is_page', 'contact') != 'contact' %}
 	<div class="cta-container">
 		<h2 class="cta-container__title">Heeft mijn portfolio uw interesse gewekt?</h2>
-		<p class="text">Ik ben momenteel op zoek naar een nieuwe uitdaging in omgeving Alphen aan den Rijn/Leiden.</p>
-		<a href="{{site.link}}/contact" class="button button-border--white">Neem contact op</a>
+		<p class="cta-container__text">{{cta_text}}</p>
+		<div class="cta-container__cta-buttons">
+			<a href="{{site.link}}/contact" class="button cta-container__button">Neem contact op</a>
+			<a href="{{theme.link}}/assets/resources/resume.pdf" target="_blank" class="button button--border cta-container__button" download>Download C.V.</a>
+		</div>
 	</div>
-	<hr class="hr--inverse divider divider--md">
+	<hr class="hr--inverse divider">
 {% endif %}
 
 <div class="footer-container">

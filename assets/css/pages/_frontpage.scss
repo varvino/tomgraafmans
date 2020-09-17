@@ -35,7 +35,6 @@
         background-position: center;
         background-size    : cover;
         background-repeat  : no-repeat;
-        height             : calc(var(--vh, 1vh) * 100);
         background-color   : white;
     }
 
@@ -53,6 +52,20 @@
 
         @include large {
             padding: 4.6875rem 0;
+        }
+    }
+
+    .hero__content {
+        @extend .grid;
+        @extend .grid-column--two;
+
+        @include medium {
+            grid-template-columns: 1fr;
+        }
+
+        @include large {
+            grid-template-columns: 1fr 1fr;
+            gap                  : $spacing--xl;
         }
     }
 
@@ -81,6 +94,20 @@
         font-size  : 1.25rem;
     }
 
+    .hero__image-container {
+        display: none;
+
+        @include large {
+            display        : flex;
+            align-items    : center;
+            justify-content: center;
+        }
+    }
+
+    .hero__image {
+        width: 100%;
+    }
+
     .hero__footer {
         @extend .grid;
         grid-template-columns: 1fr 0.5fr;
@@ -104,9 +131,24 @@
 
     .hero__social-container {
         justify-content: flex-end;
+        align-items    : center;
+        display        : none;
+
+        @include medium {
+            display: flex;
+        }
 
         >* {
-            margin-right: 1.25rem;
+            margin-right: 0.625rem;
+            white-space : nowrap;
+
+            @include medium {
+                margin-right: 1.25rem;
+            }
+
+            @include large {
+                margin-right: $spacing--sm;
+            }
 
             &:last-child {
                 margin-right: 0;
@@ -174,10 +216,6 @@
         @include large {
             grid-template-columns: repeat(3, 1fr);
         }
-
-        @include extra-large {
-            grid-template-columns: repeat(4, 1fr);
-        }
     }
 
     .work-process__card {
@@ -208,7 +246,6 @@
         margin-right: auto;
         width       : 4.6875rem;
         filter      : $primary-color-filtered;
-
     }
 
     .work-process__title {
@@ -224,6 +261,7 @@
     section.tools {
         background-color: white;
         padding         : $spacing--md 0;
+        margin-bottom   : 0;
 
         @include medium {
             padding: $spacing--lg 0;
@@ -271,9 +309,9 @@
     }
 
     .tool__image {
-        width  : $spacing--md;
-        filter : $font-color-filtered;
-        opacity: .75;
+        width     : $spacing--md;
+        filter    : $font-color-filtered;
+        transition: .25s all ease;
 
         &.twig {
             width: 2.625rem;
@@ -281,6 +319,12 @@
 
         &.figma {
             width: 2.1875rem;
+        }
+
+        &:hover {
+            @include large {
+                filter: $primary-color-filtered;
+            }
         }
 
         @include small {

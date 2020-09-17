@@ -2,8 +2,9 @@
     LAYOUT
     ======================================================== */
 .container {
-    width : 90%;
-    margin: 0 auto;
+    width   : 90%;
+    margin  : 0 auto;
+    position: relative;
 
     @include medium {
         width: 80%;
@@ -127,7 +128,8 @@
 }
 
 .divider {
-    margin: $spacing--md 0;
+    margin-top   : $spacing--md;
+    margin-bottom: $spacing--md;
 
     @include medium {
         margin-top   : $spacing--lg;
@@ -141,12 +143,11 @@
 }
 
 .full-width {
-    width       : 100vw;
-    position    : relative;
-    left        : 50%;
-    right       : 50%;
-    margin-left : -50vw;
-    margin-right: -50vw;
+    width      : 100vw;
+    /* make it 100% of the viewport width (vw) */
+    margin-left: calc((100% - 100vw) / 2);
+    /* then remove the gap to the left of the container with this equation */
+
 }
 
 /* ========================================================
@@ -173,16 +174,8 @@
 /*  ========================================================
     MAIN CONTENT
     ======================================================== */
-main {
-    margin-bottom: $spacing--md !important;
-}
-
 section {
     margin-bottom: $spacing--md;
-
-    &:last-child {
-        margin-bottom: 0;
-    }
 
     @include medium {
         margin-bottom: $spacing--lg;
@@ -198,14 +191,6 @@ section {
 
     @include medium {
         margin-bottom: $spacing--md;
-    }
-}
-
-.section__title {
-    margin-bottom: $spacing--sm - 1.25rem;
-
-    @include large {
-        font-size: 3rem;
     }
 }
 

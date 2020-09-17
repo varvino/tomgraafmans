@@ -31,26 +31,19 @@
 }
 
 .navmenu-overlay {
-    @extend .flex;
-    @extend .flex-column;
-    height          : 100%;
-    width           : 100%;
-    position        : fixed;
-    z-index         : 5;
-    left            : -100vw;
-    top             : 0;
-    background-color: #fefefe;
-    color           : $font-color;
-    overflow-x      : hidden;
-    transition      : 0.5s;
-
-    @include medium {
-        position        : inherit;
-        background-color: transparent;
-        color           : white;
-        height          : auto;
-        width           : auto;
-        overflow        : auto;
+    @include small {
+        display         : flex;
+        flex-direction  : column;
+        height          : 100vh;
+        width           : 100vw;
+        position        : fixed;
+        z-index         : 5;
+        left            : -100vw;
+        top             : 0;
+        background-color: #fefefe;
+        color           : $font-color;
+        overflow-x      : hidden;
+        transition      : 0.5s;
     }
 
     a {
@@ -94,8 +87,11 @@
         margin-bottom: 0;
     }
 
-    &[class*="button-"] {
-        color: white;
+    &[class*="button"] {
+        color        : white;
+        border-radius: 62.4375rem;
+        display      : flex;
+        align-items  : center;
 
         &:hover {
             color: $primary-color;

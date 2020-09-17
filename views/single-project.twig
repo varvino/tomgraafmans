@@ -4,36 +4,49 @@
 
 	<section class="project">
 		{% if posts is not empty %}
-			<div class="section-header grid grid-column--two gap--md">
-				<div class="section-description">
-					<h1 class="section__title">{{post.title}}</h1>
-					<div class="section__text">{{post.content}}</div>
-				</div>
-				<div class="services-container">
-					<h2>Services</h2>
-					<div class="services">
-						{% for tag in post.tags() %}
-							<a href="{{tag.link}}" class="service">{{tag.name}}</a>
-						{% endfor %}
+			<div class="container">
+				<div class="project__header grid grid-column--two">
+					<div class="project-description">
+						<h1 class="project__title">{{post.title}}</h1>
+						<div class="project__text">{{post.content}}</div>
+						{% if post.meta('url') %}
+							<a href="{{post.meta('url')}}" target="_blank" class="button project-url-button">Bekijk website</a>
+						{% endif %}
+					</div>
+					<div class="services-container">
+						<h2 class="services__title">Services</h2>
+						<div class="services">
+							{% for tag in post.tags() %}
+								<a href="{{tag.link}}" class="service">{{tag.name}}</a>
+							{% endfor %}
+						</div>
 					</div>
 				</div>
 			</div>
-			{% if post.meta('url') %}
-				<a href="{{post.meta('url')}}" target="_blank" class="button project-url-button">Bekijk website</a>
+			{% if post.meta('gallery') != empty %}
+				<hr class="no-margin divider">
+				<div class="project__body container">
+					<div class="project-gallery">
+						{% for image in post.meta('gallery') %}
+							<img src="{{Image(image).src}}" {% if Image(image).alt %} alt="{{Image(image).alt}}" {% endif %} class="project-gallery__image">
+						{% endfor %}
+					</div>
+				</div>
 			{% endif %}
 		{% endif %}
 	</section>
-
-	<section class="more-projects">
-		{% if projects is not empty %}
-			<hr class="no-margin divider full-width">
-			<h2 class="title--sm">Meer projecten</h2>
-			<div class="archive-items grid grid-column--two">
-				{% for project in projects|slice(0,2) %}
-					{% include "partials/archive-item.twig" %}
-				{% endfor %}
+	{% if projects is not empty %}
+		<hr class="no-margin divider">
+		<section class="more-projects">
+			<div class="container">
+				<h2 class="title--sm">Meer projecten</h2>
+				<div class="archive-items grid grid-column--two">
+					{% for project in projects|slice(0,2) %}
+						{% include "partials/archive-item.twig" %}
+					{% endfor %}
+				</div>
 			</div>
-		{% endif %}
-	</section>
+		</section>
+	{% endif %}
 
 {% endblock %}

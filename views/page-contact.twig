@@ -2,9 +2,16 @@
 
 {% block content %}
 	{% for post in posts %}
+		<section class="contact-form">
+			<img src="{{theme.link}}/assets/img/preview.svg" class="contact-form__image">
+			<div class="contact-form-container">
+				<div class="section__header">
 					<h1 class="section__title">{{post.title}}</h1>
 					<p class="section__text">{{cta_text}}</p>
+					<a href="{{theme.link}}/assets/resources/resume.pdf" target="_blank" class="button button--border resume-button" download>Download C.V.</a>
+				</div>
+				<div class="contact-form">{{post.content}}</div>
 			</div>
-		</div>
+		</section>
 	{% endfor %}
 {% endblock %}

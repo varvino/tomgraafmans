@@ -2,7 +2,7 @@
 
 {% block content %}
 	{% if projects is not empty %}
-		<section class="recent-work" id="projects">
+		<section class="recent-work" id="work" data-aos="fade-up" data-aos-duration="1000">
 			<div class="container">
 				<div class="section__header">
 					<h2 class="section__title">Recent werk</h2>
@@ -16,54 +16,15 @@
 					</div>
 				</div>
 				<div class="section__footer projects">
-					<a href="{{site.link}}/projects" class="button">Bekijk alle projecten</a>
+					<a href="{{site.link}}/portfolio" class="button">Bekijk portfolio</a>
 				</div>
 			</div>
 		</section>
-		<section class="work-process">
-			<div class="section__header-wrapper">
-				<div class="container">
-					<div class="section__header">
-						<h2 class="section__title">Hoe ga ik te werk?</h2>
-						<p class="section__text">Hieronder volgt de manier waarop ik uw project in handen zal nemen.</p>
-					</div>
-				</div>
-			</div>
-			<div class="container">
-				<div class="work-process__cards">
-					<div class="work-process__card">
-						<img src="{{theme.link}}/assets/img/icons/utility/checklist.svg" alt="Samen om de tafel" class="work-process__image">
-						<h3 class="work-process__title">1. Samen om de tafel</h3>
-						<p class="text text--muted">Het bespreken van de eerste ideeën tijdens een korte vergadering ter plaatse, per e-mail of via Skype. Na de eerste ideeën die we besproken hebben, zal ik u vervolgens een officiële offerte voor het project presenteren.</p>
-					</div>
-					<div class="work-process__card">
-						<img src="{{theme.link}}/assets/img/icons/utility/design.svg" alt="Samen om de tafel" class="work-process__image">
-						<h3 class="work-process__title">2. Schets &amp; design</h3>
-						<p class="text text--muted">Het bespreken van de eerste ideeën tijdens een korte vergadering ter plaatse, per e-mail of via Skype. Na de eerste ideeën die we besproken hebben, zal ik u vervolgens een officiële offerte voor het project presenteren.</p>
-					</div>
-					<div class="work-process__card">
-						<img src="{{theme.link}}/assets/img/icons/utility/feedback.svg" alt="Samen om de tafel" class="work-process__image">
-						<h3 class="work-process__title">3. Feedback sessie</h3>
-						<p class="text text--muted">Het bespreken van de eerste ideeën tijdens een korte vergadering ter plaatse, per e-mail of via Skype. Na de eerste ideeën die we besproken hebben, zal ik u vervolgens een officiële offerte voor het project presenteren.</p>
-					</div>
-					<div class="work-process__card">
-						<img src="{{theme.link}}/assets/img/icons/utility/design2.svg" alt="Samen om de tafel" class="work-process__image">
-						<h3 class="work-process__title">4. Afwerking design &amp; content</h3>
-						<p class="text text--muted">Het bespreken van de eerste ideeën tijdens een korte vergadering ter plaatse, per e-mail of via Skype. Na de eerste ideeën die we besproken hebben, zal ik u vervolgens een officiële offerte voor het project presenteren.</p>
-					</div>
-					<div class="work-process__card">
-						<img src="{{theme.link}}/assets/img/icons/utility/project-finish.svg" alt="Samen om de tafel" class="work-process__image">
-						<h3 class="work-process__title">5. Oplevering</h3>
-						<p class="text text--muted">Het bespreken van de eerste ideeën tijdens een korte vergadering ter plaatse, per e-mail of via Skype. Na de eerste ideeën die we besproken hebben, zal ik u vervolgens een officiële offerte voor het project presenteren.</p>
-					</div>
-				</div>
-			</div>
-		</section>
-		<section class="tools">
+		<section class="tools" data-aos="fade-up" data-aos-duration="1000">
 			<div class="container">
 				<div class="section__header">
-					<h2 class="section__title">En met wat ga ik te werk?</h2>
-					<p class="section__text">De onderstaande applicaties helpen mij met de bouw van uw website!</p>
+					<h2 class="section__title">Met wat werk ik?</h2>
+					<p class="section__text">De onderstaande technieken en applicaties gebruik ik bij de bouw van websites.</p>
 				</div>
 				<div class="section__body">
 					<div class="tools-container">
@@ -83,46 +44,5 @@
 				</div>
 			</div>
 		</section>
-		<section class="pricing">
-			<div class="container">
-				<div class="section__header">
-					<h2 class="section__title">Prijslijst</h2>
-					<p class="section__text">Welke prijzen hanteer ik, en waarvoor?</p>
-				</div>
-				<div class="section__body">
-					<div class="pricing-container">
-						<div class="pricing-item">
-							<div class="pricing-item__header">
-								<h3 class="pricing__title">Landing Page</h3>
-								<div class="pricing__text">Een goede landingspagina is de hoeksteen van succesvolle online marketing. Ik ontwerp mooie landingspagina's die uw inhoud, dienst of product zo goed mogelijk presenteren.</div>
-							</div>
-							<div class="pricing-item__body">
-								<div class="price">
-									<span class="price__prefix">€</span>1499
-									<span class="price__suffix">,-</span>
-								</div>
-							</div>
-							<div class="pricing-item__footer">
-								<a href="#" class="button pricing__button">Dit wil ik!</a>
-							</div>
-						</div>
-						<div class="pricing-item recommended">
-							<div class="pricing-item__header">
-								<h3 class="pricing__title">Website Pakket</h3>
-								<div class="pricing__text">Verveeld van uw huidige website? Voelt het verouderd aan? Rebranding zou de optie kunnen zijn. Of heeft u plannen voor een hele nieuwe website voor uw nieuwe bedrijf? Ik ben klaar voor de uitdaging!</div>
-							</div>
-							<div class="pricing-item__body">
-								<div class="price">
-									<span class="price__prefix">€</span>3999
-									<span class="price__suffix">,-</span>
-								</div>
-							</div>
-							<div class="pricing-item__footer">
-								<a href="#" class="button pricing__button">Dit wil ik!</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-		{% endif %}
-	{% endblock %}
+	{% endif %}
+{% endblock %}

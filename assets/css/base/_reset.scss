@@ -1,7 +1,7 @@
 *,
 *:before,
 *:after {
-    box-sizing: border-box;
+    box-sizing: inherit;
 }
 
 html,
@@ -13,6 +13,8 @@ body {
 
 html {
     scroll-behavior: smooth;
+    box-sizing     : border-box;
+
 }
 
 body {

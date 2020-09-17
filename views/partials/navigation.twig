@@ -1,6 +1,6 @@
 {% for item in header_menu.items %}
 	{% if loop.last %}
-		<a class="nav-item button button--rounded-full{{ item.classes|join(' ') }}" href="{{ item.link }}">{{ item.title }}</a>
+		<a class="nav-item button{{ item.classes|join(' ') }}" href="{{ item.link }}">{{ item.title }}</a>
 	{% else %}
 		<a class="nav-item{{ item.classes|join(' ') }}" href="{{ item.link }}">{{ item.title }}</a>
 	{% endif %}

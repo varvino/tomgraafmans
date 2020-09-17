@@ -1,0 +1,53 @@
+section.contact-form {
+    @extend .grid;
+    align-items: center;
+    gap        : $spacing--sm;
+
+    @include medium {
+        gap                  : $spacing--md;
+        grid-template-columns: 1fr;
+    }
+
+    @include large {
+        gap                  : $spacing--lg;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    @include extra-large {
+        gap: $spacing--xl;
+    }
+}
+
+.contact-form__image {
+    width: 100%;
+}
+
+.resume-button{
+    margin-top: $spacing--sm;
+}
+
+.wpcf7-form {
+    position: relative;
+
+    p {
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+    }
+
+    >* {
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+div.wpcf7 {
+    .ajax-loader {
+        position: absolute;
+        bottom  : -$spacing--sm;
+        left    : 0;
+        right   : 0;
+        margin  : 0 auto;
+    }
+}

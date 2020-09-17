@@ -1,31 +1,36 @@
 {% block header %}
 	{% if fn('is_front_page') %}
-		<div class="hero">
-			<div class="hero-container">
-				<div class="navbar">
-					{% include "partials/logo.twig" %}
-					<div class="hamburger" onclick="openNav()"></div>
-					<div class="navmenu-overlay">
-						<a href="javascript:void(0)" class="button--close" onclick="closeNav()"></a>
-						<div class="navmenu">
-							{% include "partials/navigation.twig" %}
+		{% for post in posts %}
+			<div class="hero">
+				<div class="hero-container">
+					<div class="navbar" data-aos="fade-up" data-aos-duration="1000">
+						{% include "partials/logo.twig" %}
+						<div class="hamburger" onclick="openNav()"></div>
+						<div class="navmenu-overlay">
+							<a href="javascript:void(0)" class="button--close" onclick="closeNav()"></a>
+							<div class="navmenu">
+								{% include "partials/navigation.twig" %}
+							</div>
 						</div>
 					</div>
-				</div>
-				<div class="hero__content" data-aos="fade-up" data-aos-duration="1000">
-					<h1 class="hero__title">Ik maak websites<br>
-							<span></span>
-						</h1>
-						<h3 class="hero__subtitle">Hi, ik ben Tom - een freelance web designer uit Alphen aan den Rijn.<br>Ik help bedrijven hun ideeën digitaal te verwezenlijken!</h3>
+					<div class="hero__content" data-aos="fade-up" data-aos-duration="1000">
+						<div class="hero__text">
+							<h1 class="hero__title">Ik maak websites<br><span></span></h1>
+							<h3 class="hero__subtitle">{{post.content}}</h3>
+						</div>
+						<div class="hero__image-container">
+							<img src="{{theme.link}}/assets/img/preview.svg" class="hero__image">
+						</div>
 					</div>
 					<div class="hero__footer">
 						<div class="hero__footer-column">
-							<a href="#projects" class="hero__scroll-button">
+							<a href="#work" class="hero__scroll-button">
 								<svg width="32" height="32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9.043 1.327V30.49M17 22.673l-8 8-8-8" stroke="currentColor" stroke-width="1.328" stroke-linecap="round" stroke-linejoin="round"/></svg>
 								<div>Scroll naar mijn recente projecten</div>
 							</a>
 						</div>
 						<div class="hero__footer-column hero__social-container">
+							<a href="{{theme.link}}/assets/resources/resume.pdf" target="_blank" class="button button--border" download>Download C.V.</a>
 							<a href="https://www.linkedin.com/in/tomgraafmans/" target="_blank">
 								<svg width="32" height="32" viewbox="0 0 32 32" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
 									<path d="M21.333 10.6667C23.4547 10.6667 25.4896 11.5095 26.9899 13.0098C28.4902 14.5101 29.333 16.5449 29.333 18.6667V28H23.9997V18.6667C23.9997 17.9594 23.7187 17.2811 23.2186 16.781C22.7185 16.2809 22.0403 16 21.333 16C20.6258 16 19.9475 16.2809 19.4474 16.781C18.9473 17.2811 18.6663 17.9594 18.6663 18.6667V28H13.333V18.6667C13.333 16.5449 14.1759 14.5101 15.6762 13.0098C17.1764 11.5095 19.2113 10.6667 21.333 10.6667Z" fill="currentColor"/>
@@ -42,16 +47,17 @@
 					</div>
 				</div>
 			</div>
-		{% else %}
-			<div class="navbar">
-				{% include "partials/logo.twig" %}
-				<div class="hamburger" onclick="openNav()"></div>
-				<div class="navmenu-overlay">
-					<a href="javascript:void(0)" class="button--close" onclick="closeNav()"></a>
-					<div class="navmenu">
-						{% include "partials/navigation.twig" %}
-					</div>
+		{% endfor %}
+	{% else %}
+		<div class="navbar" data-aos="fade-up" data-aos-duration="1000">
+			{% include "partials/logo.twig" %}
+			<div class="hamburger" onclick="openNav()"></div>
+			<div class="navmenu-overlay">
+				<a href="javascript:void(0)" class="button--close" onclick="closeNav()"></a>
+				<div class="navmenu">
+					{% include "partials/navigation.twig" %}
 				</div>
 			</div>
-		{% endif %}
-	{% endblock %}
+		</div>
+	{% endif %}
+{% endblock %}

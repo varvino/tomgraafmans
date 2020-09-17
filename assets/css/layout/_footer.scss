@@ -10,11 +10,7 @@ footer {
     padding         : $spacing--md 0;
 
     @include medium {
-        padding-top: 4.6875rem;
-    }
-
-    @include large {
-        padding-top: $spacing--lg;
+        padding: $spacing--lg 0;
     }
 
     .logo__text {
@@ -27,12 +23,34 @@ footer {
     }
 
     .divider {
-        margin: $spacing--md 0;
+        @include large {
+            margin-top   : $spacing--lg;
+            margin-bottom: $spacing--lg;
+        }
     }
 
     .button {
+        background-color: $background-color;
+        border-color    : transparent;
+        color           : $primary-color;
+
+        &:hover {
+            background-color: transparent;
+            border-color    : $background-color;
+            color           : $background-color;
+        }
+    }
+
+    .button--border {
         background-color: transparent;
         border-color    : $background-color;
+        color           : $background-color;
+
+        &:hover {
+            background-color: $background-color;
+            color           : $primary-color;
+            border-color    : transparent;
+        }
     }
 }
 
@@ -44,28 +62,57 @@ footer {
     CALL TO ACTION
     ======================================================== */
 .cta-container {
-    text-align: center;
-
-    @include medium {
-        margin-bottom: 4.6875rem;
-    }
-
-    @include large {
-        margin-bottom: $spacing--lg;
-    }
-}
-
-.cta-container {
     @extend .container;
-    @extend .flex;
-    @extend .flex-column;
-
-    .text {
-        margin-bottom: $spacing--sm;
-    }
+    @extend .grid;
+    gap: $spacing--sm;
 
     .button {
         align-self: center;
+    }
+
+    @media (min-width: 25rem) {
+        text-align: center;
+    }
+
+    @include large {
+        gap      : $spacing--md;
+        max-width: 62.5rem;
+    }
+}
+
+.cta-container__title {
+    margin-bottom: 0;
+
+    @include medium {
+        font-size: 2.5rem;
+    }
+
+    @include large {
+        font-size: 3rem;
+    }
+}
+
+.cta-container__text {
+    @extend .text;
+    opacity      : .75;
+    margin-bottom: 0;
+}
+
+.cta-container__button {
+    justify-self : center;
+    margin-bottom: $spacing--sm;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    @include medium {
+        margin-bottom: 0;
+        margin-right : $spacing--sm;
+
+        &:last-child {
+            margin-right: 0;
+        }
     }
 }
 

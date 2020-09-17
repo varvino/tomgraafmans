@@ -1,3 +1,5 @@
+{% set cta_text = 'Ik ben momenteel op zoek naar een nieuwe uitdaging in omgeving Alphen aan den Rijn/Leiden of omgeving Hoofddorp/Schiphol, denkt u dat ik geschikt ben? Neem dan contact op en/of download mijn CV!' %}
+
 {% block head %}
 	{% include 'layout/head.twig' %}
 {% endblock %}
@@ -15,7 +17,7 @@
 		{% endif %}
 	</header>
 
-	<main {% if not fn('is_front_page') %} class="container" {% endif %}>
+	<main {% if fn('is_front_page') %} {% elseif post.type == 'project' %} {% else %} class="container" {% endif %}>
 		{% block content %}
 			Content
 		{% endblock %}
