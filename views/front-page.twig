@@ -9,9 +9,9 @@
 					<p class="section__text">Bekijk hier een samenstelling van mijn meest recente projecten.</p>
 				</div>
 				<div class="section__body">
-					<div class="archive-items grid-column--two">
+					<div class="project-previews grid-column--two">
 						{% for project in projects|slice(0,2) %}
-							{% include "partials/archive-item.twig" %}
+							{% include "partials/project-preview.twig" %}
 						{% endfor %}
 					</div>
 				</div>

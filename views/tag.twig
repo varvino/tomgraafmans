@@ -8,9 +8,9 @@
 		</div>
 
 		{% if term_page.posts is not empty %}
-			<div class="archive-items grid grid-column--two">
+			<div class="project-previews grid grid-column--two">
 				{% for project in term_page.posts %}
-					{% include "partials/archive-item.twig" %}
+					{% include "partials/project-preview.twig" %}
 				{% endfor %}
 			</div>
 		{% endif %}

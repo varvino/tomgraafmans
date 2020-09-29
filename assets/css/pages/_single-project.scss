@@ -1,11 +1,3 @@
-.services {
-    @extend .archive-item__tags;
-}
-
-.service {
-    @extend .archive-item__tag;
-}
-
 .project__header {
     gap          : $spacing--sm;
     margin-bottom: $spacing--sm;

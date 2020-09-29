@@ -8,9 +8,9 @@
 		</div>
 
 		{% if projects is not empty %}
-			<div class="archive-items grid grid-column--two">
+			<div class="project-previews grid grid-column--two">
 				{% for project in projects %}
-					{% include "partials/archive-item.twig" %}
+					{% include "partials/project-preview.twig" %}
 				{% endfor %}
 			</div>
 		{% endif %}

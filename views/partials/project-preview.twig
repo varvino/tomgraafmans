@@ -1,0 +1,25 @@
+<div class="project-preview project-preview--{{project.post_type}}">
+	{% if project.thumbnail %}
+		<a href="{{project.link}}" class="project-preview__link">
+			<img src="{{project.thumbnail.src}}" alt="{{project.thumbnail.alt}}" class="project-preview__image">
+		</a>
+	{% else %}
+		<a href="{{project.link}}" class="project-preview__link">
+			<img src="http://placehold.jp/500x500.png" alt="{{project.title}}" class="project-preview__image">
+		</a>
+	{% endif %}
+	<div class="project-preview__content">
+		<div class="project-preview__text">
+			<a href="{{project.link}}" class="project-preview__link">
+				<h2 class="project-preview__title">{{project.title}}</h2>
+			</a>
+			<div class="services">
+				{% for tag in project.tags() %}
+					<a href="{{tag.link}}" class="service">{{tag.name}}</a>
+				{% endfor %}
+			</div>
+			<p class="text text--muted">{{project.preview.length(15).read_more('')}}</p>
+		</div>
+		<a href="{{project.link}}" class="link">Bekijk project</a>
+	</div>
+</div>

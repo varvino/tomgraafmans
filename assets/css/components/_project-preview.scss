@@ -1,4 +1,4 @@
-.archive-items {
+.project-previews {
     @extend .grid;
 
     gap: $spacing--md;
@@ -8,7 +8,7 @@
     }
 }
 
-.archive-item {
+.project-preview {
     >* {
         margin-bottom: $spacing--sm/1.75;
 
@@ -42,18 +42,18 @@
     }
 
     &:last-child {
-        .archive-item__content {
+        .project-preview__content {
             margin-bottom: 0;
         }
     }
 }
 
-.archive-item__link {
+.project-preview__link {
     display: block;
     color  : inherit;
 }
 
-.archive-item__image {
+.project-preview__image {
     width     : 100%;
     height    : 15.625rem;
     object-fit: cover;
@@ -67,7 +67,7 @@
     }
 }
 
-.archive-item__title {
+.project-preview__title {
     font-size: $spacing--sm;
 
     @include medium {
@@ -79,13 +79,13 @@
     }
 }
 
-.archive-item__tags {
+.services {
     display  : flex;
     flex-wrap: wrap;
     opacity  : .5;
 }
 
-.archive-item__tag {
+.service {
     margin-right : 0.625rem;
     margin-bottom: 0.625rem;
     border       : 0.0625rem solid $font-color;
