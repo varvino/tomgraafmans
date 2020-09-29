@@ -18,4 +18,13 @@ $context          = Timber::context();
 $context['posts'] = new Timber\PostQuery();
 $templates        = array('front-page.twig');
 
+$project_args = array(
+    'post_type' => 'project',
+    'post_status' => 'publish',
+    'orderby' => 'publish_date',
+    'order' => 'DESC'
+);
+
+$context['projects'] = new Timber\PostQuery($project_args);
+
 Timber::render($templates, $context);
