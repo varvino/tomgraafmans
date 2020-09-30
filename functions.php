@@ -194,3 +194,5 @@ function my_custom_disable_author_page()
 }
 
 add_action('template_redirect', 'my_custom_disable_author_page');
+
+add_filter( 'big_image_size_threshold', '__return_false' );
