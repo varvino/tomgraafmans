@@ -47,6 +47,16 @@
 		<meta property="twitter:description" content="{{meta_title}}">
 		<meta property="twitter:image" content="{{theme.link}}/assets/img/preview-image.jpg">
 
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-BPPYFHF27B"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+
+			gtag('config', 'G-BPPYFHF27B');
+		</script>
+
 		{{function('wp_head')}}
 	</head>
 </html>
